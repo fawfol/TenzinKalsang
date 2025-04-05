@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script> if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){window.location.href = "../index.html";}</script>   
+    <meta name="google-site-verification" content="QR_2JavLpo5turdC0qRUmbtwf1FeRQK7WfX4VHW7JG0" />
+    <meta name="description" content="Tenzin Kalsang – Aspiring software engineer and full stack developer dedicated to creating innovative and efficient solutions. Explore my portfolio, projects, and skills at tenzinkalsang.site">
+    <link rel="icon" href="../assets/images/icon-logo.webp" type="image/svg+xml">
+    <title>TENZIN KALSANG</title>
+    <link rel="stylesheet" href="assets/mobile.css">
+    <script src="../assets/js/range-animation.js"></script>
+    <script src="assets/background-design.js"></script>
+    <script src="assets/range-load.js"></script>
+    <script src="../mobile-site/assets/js/Togglenav.js"></script>
+    <script src="../assets/js/hero-animation-script.js"></script>
+    <script src="../assets/js/myscript.js"></script>
+    <script src="../assets/js/fade-in-script.js"></script>
+    <script src="../assets/js/background-box.js"></script>
+    <script src="../assets/js/scrollToDiv.js"></script>
+    <script src="../assets/js/show-description.js"></script>
+    <script src="../assets/js/light-and-dark-hold-me-hard-and-mellow.js"></script>
+    <script src="../mail-script.ts"></script>
+</head>
+<body onload="createCircle()">
+
+<!--navigation bar-->
+<nav id="navbar">
+    <div class="nav-container">
+        <label class="theme-switch">
+                <input class="checkbox" type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+        </label>
+    
+        <p class="logo-image-text" style="color: white !important;">TENZIN KALSANG</p>
+    
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+        </label>
+    
+        <ul class="nav-menu">
+            <li><a onclick="scrollToDiv('vision')" style="color: white !important;">Vision</a></li>
+            <li><a onclick="scrollToDiv('about')" style="color: white !important;">About me</a></li>
+            <li><a onclick="scrollToDiv('skill')" style="color: white !important;">My skills</a></li>
+            <li><a onclick="scrollToDiv('journey')" style="color: white !important;">Journey</a></li>
+            <li><a onclick="scrollToDiv('project')" style="color: white !important;">My projects</a></li>
+            <li><a onclick="scrollToDiv('contact')" style="color: white !important;">Contact me</a></li>
+        </ul>
+    </div>
+</nav>    
+<div class="container">
+    <!--hero content division-->
+    <div class="hero-content-slide segments">
+            <!--overlapping heading DarkWide-->
+            <div class="silhouette-text">
+                <div class="glass heading">
+                <div><span class="line1">&nbsp;BUILD.</span></div>
+                <div><span class="line2">&nbsp;BREAK.</span></div>
+                <div><span class="line3">LEARN</span></div>
+                <div><span class="line4">AND</span></div>
+                <div><span class="line5">GROW.</span></div>
+                </div>
+            </div>
+    </div>    
+    <br><br><br>
+    <!--About content -->
+    <br><br>
+    <div class="segments" id="vision">
+        <section class="glass"> 
+            <span class="italica-words">- VISION -</span> <br><br>
+            "I aspire to become a skilled software engineer,<br>
+            I'm passionate about building innovative and <br>
+            efficient digital solutions.<br>
+            I find joy in programming—bringing ideas to life <br>
+            and seeing my code work as intended.<br>
+            Whether developing applications or designing<br>
+            interactive websites, I am driven by curiosity and<br>
+            a desire to create seamless, high-performance experiences."<br><br><br>
+            "Innovation is at the core of my work, and I strive<br>
+            to develop solutions that benefit a wide audience.<br>
+            My primary focus is software development, but I<br>
+            also take an interest in ensuring secure and<br>
+            reliable systems. With a mindset of continuous <Br>
+            learning, I am committed to pushing the boundaries<Br>
+            of technologies and making a meaningful impact<Br>
+            through my work."
+        </section>
+    </div>
+        
+    <!-- about content 2 -->
+    <div class="segments">
+        <img class="profile-picture" alt="nothing to see here" src="../assets/images/profile-picture-webp.webp">
+        <br><span class="quote">
+            Turning ideas into Code<br>bugs into Lessons<br>And<br>Websites into Experiences
+        </span>
+    </div>
+    <div class="segments" id="about">
+        <section class="glass">
+            <span class="italica-words">- ABOUT -</span><br><br>
+            "This portfolio showcases my journey as a
+            developer. I've tackled the complexities of both front-end and
+            back-end development.
+            I'm fluent in Browser, and I enjoy the challenge
+            of transforming a plain-looking page into
+            something beautiful.And when JavaScript
+            misbehaves I put it in Timeout
+            <br><br> 
+            While I improve at front-end development,
+            I'm eager to expand my skillset and become a
+            full-stack developer. I'm always looking for ways
+            to sharpen my abilities in every espects.
+            Beyond coding I'm also fascinated by network security
+            and I'm determined to learn more about cybersecurity.
+            The logic behind secure systems is incredibly 
+            compelling and I think it's important for developers
+            to understand the challenges of digital security.
+            Like Linus Torvalds, I appreciate efficient code
+            and the power of open-source innovation.
+            I love exploring new technologies, optimizing
+            performance and creating seamless user
+            experiences Because, ultimately great software
+            is about more than just how it works;
+            it's about how it feels to use."
+        </section>
+    </div>
+
+    <!-- skill section -->
+    <div class="segments skill-section" id="skill">
+        <span class="italica-words">-SKILL DOMAIN-</span><br>
+            <div class="lang-skill">
+                <div class="skill-range-title" id="about-range-title">
+                    <div class="tits">JAVASCRIPT</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-1" data-width="60%" id="inner-range-box-1"></div>
+                    </div>
+                    <div class="tits">HTML</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-2" data-width="95%" id="inner-range-box-2"></div>
+                    </div>
+                    <div class="tits">CSS</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-3" data-width="85%" id= "inner-range-box-3"></div>
+                    </div>
+                    <div class="tits">C</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-4" data-width="50%" id="inner-range-box-4"></div>
+                    </div>
+                    <div class="tits">CPP</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-5" data-width="46%" id="inner-range-box-5"></div>
+                    </div>
+                    <div class="tits">SQL</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-6" data-width="20%" id="inner-range-box-6"></div>
+                    </div>
+                    <div class="tits">BASH</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-7" data-width="15%" id="inner-range-box-7"></div>
+                    </div>
+                    <div class="tits">JAVA</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-8" data-width="20%" id="inner-range-box-8"></div>
+                    </div>
+                    <div class="tits">VB 6.0</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-9" data-width="40%" id="inner-range-box-9"></div>
+                    </div>
+                    <div class="tits">x86 asm</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-10" data-width="5%" id="inner-range-box-10"></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="segments" id="journey">
+        <section class="glass">
+            <span class="italica-words">- JOURNEY -</span><br><br>
+                "Outside of my main coursework,In addition to my
+                primary studies, I have also been actively broadening
+                my abilities. During my third semester, I learned SQL,
+                that opened up the door to databases world.
+                And throughout during my holiday break. I immersed
+                myselfin Java, marking my first experience with the
+                captivating realm of object-oriented programming.
+                Right now, in my fourth semester, I'm actually working
+                with VB 6.0 which is not much of a use these days but
+                gives me a unique opportunity to explore legacy
+                systems and how they still play a role today.<br><br>
+                Beyond the academic side of things, I've developed
+                real passion for Bash scripting and the command line.
+                It's something I do as a hobby to make managing
+                system operations faster and easier. I see each new
+                skill I learn as another tool in my toolbox for
+                refining my expertise with every project I tackle."
+        </section>
+    </div>
+
+    <div class="segments" id="project">
+        <div class="glass">
+            <span class="italica-words">- GAMES -</span>
+            <div class="wrapper ">
+                <div class="card">
+                    <h2>RolePlay Game</h2><br>
+                    <a href="../modular-index/RPG/rpg-game-index.html"><img src="../assets/images/rpg-project-ss.webp" alt="rpg-ss"></a>
+                </div>
+                <div class="card">
+                    <h2>Hangman Game</h2><br>
+                    <a href="../modular-index/Hangman/hangman-index.html"><img src="../assets/images/hangman-project-ss.webp" alt="hangman-ss"></a>
+                </div>
+                <div class="card">
+                    <h2>TicTacToe Game</h2><br>
+                    <a href="../modular-index/TicTacToe/TicTacToe.html"><img src="../assets/images/tictactoe-project-ss.webp" alt="tictactoe-ss"></a>
+                </div>
+                <div class="card">
+                    <h2>Maze-Game.asm</h2><br>
+                    <a href="https://github.com/fawfol/MazeGame-x86asm-.git"><img src="../assets/images/maze-ss.svg" alt="MazeGame-x86asm-ss"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="segments">
+        <span class="quote">
+            I n n o v a t i o n <br> t h r i v e s <br> w h e r e <br> c u r i o s i t y <br> m e e t s <br> p e r s i s t e n c e 
+        </span>
+    </div>
+    
+    <div class="segments" >
+        <div class="glass">
+            <span class="italica-words">- PROJECTS -</span>
+            <div class="wrapper ">
+                <div class="card">
+                    <h2>Website-1</h2><br>
+                    <a href="../portfolio-1/index.html" target="_blank"><img alt="My first website that I created after learnin JS, this took me a while to make an learnt many things along the way to this result" src="../assets/images/portfolio pic.webp"></a><br>
+                    <p class="description">
+                        My first ever Website<br>
+                        <a style="color: aqua;" href="../zips/PortfolioTK.zip">Tap this Download Zip resource</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h2>Transliterator</h2><br>
+                    <a href="https://github.com/Epstien/English-to-Tibetan-Transliterator.git" target="_blank"><img alt="Transliterates Englihs word to tibetan word of its pronunciaiton" src="../assets/images/fbd56a9f-ce96-4149-8add-1904c38aab74.webp"></a><br>
+                    <p class="description">
+                        English words to Tibetan Transliterator created with JAVA
+                        <br><a style="color: aqua;" href="../zips/Transliterator.zip" download>Tap this Download Zip resource</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h2>Bootloader</h2><br>
+                    <a href="https://github.com/fawfol/bootloader.git" target="_blank"><img alt="Tbootloader" src="../assets/images/fbd56a9f-ce96-4149-8add-1904c38aab74.webp"></a><br>
+                    <p class="description">
+                        A simple Bootloader. (...not able to enter protected 32bit)
+                   </p>
+                </div>
+                <div class="card">
+                    <h2>GeoLocation-Alarm</h2><br>
+                    <a href="../modular-index/Geolocate-alarm/geolocate-alarm.html" target="_blank"><img alt="This is my first project idea which is basically an alamr but location based alarm rahter than classic time based." src="../assets/images/Screenshot (61).webp"></a><br>
+                    <p class="description">
+                        A location based Alarm made with use of Google map API
+                    </p>
+                </div>
+                <div class="card">
+                    <h2>Fluid Simulator</h2><br>
+                    <a href="../modular-index/Fluidsim/fluidsim.html"><img alt="I tried to conquer this difficult ~sidequest~ of simulating fluid dynamic with three.js and js with html and css framewrk" src="../assets/images/Screenshoto.webp"></a><br>
+                    <p class="description">
+                        Tried making a Fluid dynamic Simulator
+                    </p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="contact-class" id="contact">
+    <div class="contact-form" id="contact-form">
+        <p class="blog-heading-contact">Contact<br></p>
+        <p class="contact-form-text">Tell me about your concern<br><br></p>
+
+        <form action="https://formspree.io/f/mldebeze" method="POST">
+            <div class="form-div-all">
+                <label for="first-name" class="form-text-description">First Name</label>
+                <input type="text" minlength="3" maxlength="20" placeholder="Required" class="form-input" id="first-name-input" name="fname-name" required>
+            </div>
+
+            <div class="form-div-all">
+                <label for="last-name" class="form-text-description">Last Name</label>
+                <input type="text" minlength="3" maxlength="20" placeholder="Required" class="form-input" id="last-name-input" name="lname-name" required>
+            </div>
+
+            <div class="form-div-all phone-number-container">
+                <label for="phone-number" class="form-text-description">Phone</label>
+                <select name="countryCode" id="phone-country-code" class="phone-country-code">
+                    <option data-countryCode="IN" value="91" selected>India (+91)</option>
+                    <optgroup label="Other regions & countries">
+                        <option data-countryCode="AF" value="93">Afghanistan (+93)</option>
+                        <option data-countryCode="AL" value="355">Albania (+355)</option>
+                        <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                        <option data-countryCode="AS" value="1-684">American Samoa (+1-684)</option>
+                        <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                        <option data-countryCode="AO" value="244">Angola (+244)</option>
+                        <option data-countryCode="AI" value="1-264">Anguilla (+1-264)</option>
+                        <option data-countryCode="AQ" value="672">Antarctica (+672)</option>
+                        <option data-countryCode="AG" value="1-268">Antigua and Barbuda (+1-268)</option>
+                        <option data-countryCode="AR" value="54">Argentina (+54)</option>
+                        <option data-countryCode="AM" value="374">Armenia (+374)</option>
+                        <option data-countryCode="AW" value="297">Aruba (+297)</option>
+                        <option data-countryCode="AU" value="61">Australia (+61)</option>
+                        <option data-countryCode="AT" value="43">Austria (+43)</option>
+                        <option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+                        <option data-countryCode="BS" value="1-242">Bahamas (+1-242)</option>
+                        <option data-countryCode="BH" value="973">Bahrain (+973)</option>
+                        <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+                        <option data-countryCode="BB" value="1-246">Barbados (+1-246)</option>
+                        <option data-countryCode="BY" value="375">Belarus (+375)</option>
+                        <option data-countryCode="BE" value="32">Belgium (+32)</option>
+                        <option data-countryCode="BZ" value="501">Belize (+501)</option>
+                        <option data-countryCode="BJ" value="229">Benin (+229)</option>
+                        <option data-countryCode="BM" value="1-441">Bermuda (+1-441)</option>
+                        <option data-countryCode="BT" value="975">Bhutan (+975)</option>
+                        <option data-countryCode="BO" value="591">Bolivia (+591)</option>
+                        <option data-countryCode="BA" value="387">Bosnia and Herzegovina (+387)</option>
+                        <option data-countryCode="BW" value="267">Botswana (+267)</option>
+                        <option data-countryCode="BR" value="55">Brazil (+55)</option>
+                        <option data-countryCode="BN" value="673">Brunei (+673)</option>
+                        <option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+                        <option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+                        <option data-countryCode="BI" value="257">Burundi (+257)</option>
+                        <option data-countryCode="KH" value="855">Cambodia (+855)</option>
+                        <option data-countryCode="CM" value="237">Cameroon (+237)</option>
+                        <option data-countryCode="CA" value="1">Canada (+1)</option>
+                        <option data-countryCode="CV" value="238">Cape Verde (+238)</option>
+                        <option data-countryCode="KY" value="1-345">Cayman Islands (+1-345)</option>
+                        <option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+                        <option data-countryCode="TD" value="235">Chad (+235)</option>
+                        <option data-countryCode="CL" value="56">Chile (+56)</option>
+                        <option data-countryCode="CO" value="57">Colombia (+57)</option>
+                        <option data-countryCode="KM" value="269">Comoros (+269)</option>
+                        <option data-countryCode="CD" value="243">Congo, Democratic Republic (+243)</option>
+                        <option data-countryCode="CG" value="242">Congo, Republic (+242)</option>
+                        <option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+                        <option data-countryCode="HR" value="385">Croatia (+385)</option>
+                        <option data-countryCode="CU" value="53">Cuba (+53)</option>
+                        <option data-countryCode="CY" value="357">Cyprus (+357)</option>
+                        <option data-countryCode="CZ" value="420">Czech Republic (+420)</option>
+                        <option data-countryCode="DK" value="45">Denmark (+45)</option>
+                        <option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+                        <option data-countryCode="DO" value="1-809">Dominican Republic (+1-809)</option>
+                        <option data-countryCode="EC" value="593">Ecuador (+593)</option>
+                        <option data-countryCode="EG" value="20">Egypt (+20)</option>
+                        <option data-countryCode="SV" value="503">El Salvador (+503)</option>
+                        <option data-countryCode="EE" value="372">Estonia (+372)</option>
+                        <option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+                        <option data-countryCode="FI" value="358">Finland (+358)</option>
+                        <option data-countryCode="FR" value="33">France (+33)</option>
+                        <option data-countryCode="DE" value="49">Germany (+49)</option>
+                        <option data-countryCode="GR" value="30">Greece (+30)</option>
+                        <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+                        <option data-countryCode="IN" value="91">India (+91)</option>
+                        <option data-countryCode="ID" value="62">Indonesia (+62)</option>
+                        <option data-countryCode="IT" value="39">Italy (+39)</option>
+                        <option data-countryCode="JP" value="81">Japan (+81)</option>
+                        <option data-countryCode="MY" value="60">Malaysia (+60)</option>
+                        <option data-countryCode="MX" value="52">Mexico (+52)</option>
+                        <option data-countryCode="NP" value="977">Nepal (+977)</option>
+                        <option data-countryCode="NL" value="31">Netherlands (+31)</option>
+                        <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+                        <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                        <option data-countryCode="PK" value="92">Pakistan (+92)</option>
+                        <option data-countryCode="PH" value="63">Philippines (+63)</option>
+                        <option data-countryCode="PL" value="48">Poland (+48)</option>
+                        <option data-countryCode="RU" value="7">Russia (+7)</option>
+                        <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+                        <option data-countryCode="ZA" value="27">South Africa (+27)</option>
+                        <option data-countryCode="KR" value="82">South Korea (+82)</option>
+                        <option data-countryCode="ES" value="34">Spain (+34)</option>
+                        <option data-countryCode="SE" value="46">Sweden (+46)</option>
+                        <option data-countryCode="CH" value="41">Switzerland (+41)</option>
+                        <option data-countryCode="TH" value="66">Thailand (+66)</option>
+                        <option data-countryCode="TB" value="86">Tibet (+86)</option>
+                        <option data-countryCode="TR" value="90">Turkey (+90)</option>
+                        <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                        <option data-countryCode="GB" value="44">United Kingdom (+44)</option>
+                        <option data-countryCode="US" value="1">United States (+1)</option>
+                        <option data-countryCode="VN" value="84">Vietnam (+84)</option>
+                        <option data-countryCode="ZM" value="260">Zambia (+260)</option>
+                        <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+
+                    </optgroup>
+                </select>
+                <input minlength="7" maxlength="14" placeholder="Optional" type="text" class="form-input" id="phone-input" name="phone-name">
+            </div>
+
+            <div class="form-div-all">
+                <label for="mail" class="form-text-description">Mail</label>
+                <input type="email" placeholder="Required" minlength="12" class="form-input" id="mail-input" name="mail-name" required>
+            </div>
+
+            <div class="form-div-all">
+                <label for="message" class="form-text-description">Queries</label>
+                <textarea minlength="20" placeholder="How can you help me help you?" id="message-input" name="message-name" required></textarea>
+            </div>
+
+            <button class="contact-form-submit" name="submit" type="submit">SEND</button>
+        </form>
+    </div>
+</div>
+
+<!-- Social media links container OUTSIDE the contact box -->
+<div class="social-links-container">
+        <p class="social-heading"> SOCIAL LINKS : </p>
+        <div class="contact-instagram-link-div" id="contact-instagram-div">
+            <a href="https://www.instagram.com/tttt___kalsang/"><font class="contact-social-link-text">Instagram : tttt___kalsang</font></a>
+        </div>
+        <div class="contact-twitter-link-div" id="contact-twitter-div" >
+            <a href="https://x.com/Hilarious_Monke"><font class="contact-social-link-text">Twitter X : Hilarious_Monke</font></a>
+        </div>
+        <div class="contact-linkedin-link-div" id="contact-linkedin-div">
+           <a href="https://www.linkedin.com/in/tenzin-kalsang-090985285/" ><font class="contact-social-link-text">LinkedIn : Tenzin&nbsp;Kalsang</font></a>
+        </div>
+        <div class="contact-twitter-link-div" id="contact-twitter-div" >
+            <a href="https://github.com/fawfol"><font class="contact-social-link-text">GitHub : FAWFOL</font></a>
+        </div>
+        <a href="../copyright.html" class="legal-link">LEGAL</a>
+</div>
+    <p class="easter" style="margin-bottom: 1rem !important">: I LOVE CAPPUCCINO & LONG SOCKS :<br>And Im Bad at Explaining Things</p>
+</body>
+</html>

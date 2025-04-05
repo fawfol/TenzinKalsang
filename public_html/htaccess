@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect mobile users to mobile-site/mobile-index.html
+RewriteCond %{HTTP_USER_AGENT} "Mobi|Android|iPhone" [NC]
+RewriteRule ^index\.html$ /mobile-site/mobile-index.html [L,R=302]

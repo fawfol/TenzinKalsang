@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../../assets/images/Screenshoto.webp" type="image/webp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Fluid Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+        }
+        canvas {
+            display: block;
+            background: black;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="fluidCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('fluidCanvas'); 
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = 400;
+        canvas.height = 200;
+
+        let angle = 0;
+
+        window.addEventListener('deviceorientation', (event) => { 
+            let gamma = event.gamma; // Tilt left-right
+            if (gamma > 45) gamma = 45;  // Clamp max
+            if (gamma < -45) gamma = -45; // Clamp min
+            angle = gamma * (Math.PI / 180); // Convert to radians
+        });
+
+        function drawWater() { 
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            let tiltEffect = Math.sin(angle) * (canvas.width / 6); // Control tilt range
+
+            ctx.fillStyle = 'blue';
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height);
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.lineTo(canvas.width, canvas.height - 50 + tiltEffect);
+            ctx.lineTo(0, canvas.height - 50 - tiltEffect);
+            ctx.closePath();
+            ctx.fill();
+
+            requestAnimationFrame(drawWater);
+        }
+
+        drawWater();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEATHER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<Style>
+  * {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: rgba(66, 16, 71, 0.429);
+  color: white;
+}
+.zoro::before {
+  content: "";
+  background-color: aliceblue;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.weather {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  border: 2px solid rgba(199, 174, 30, 0.56);
+  border-radius: 90px 90px;
+  background-color: rgba(211, 176, 69, 0.375);
+  box-shadow: 5px 5px rgba(77, 24, 77, 0.492);
+  margin: 0px 76px 130px 0px;
+}
+.weather1 >p  {
+ font-size: 4rem;
+  padding: 20px;
+  margin: 10px;
+
+}
+.weather1 > span{
+  margin-left: 2%;
+  margin-right: 2%;
+    position: relative;
+    font-size: 1.5rem;
+    bottom: 92px;
+    left: 146px;
+}
+.weather2> p {
+  font-size: 2rem;
+
+  margin: 10px;
+  padding-left: 55px;
+
+}
+.weather2> span{
+font-size: 1.5rem;
+margin: 20px;
+}
+.weather3> span {
+  font-size: 1.5rem;
+  margin: 20px;
+}
+nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+  border-radius:0  90px 0 90px;
+  background-color: rgba(129, 105, 27, 0.685);
+  box-shadow: 0 0 10px 10px rgba(72, 157, 47, 0.312);
+}
+nav form {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+.searchBar{
+  color: aliceblue;
+  height: 25px;
+  font-size: 22px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  background-color: rgba(206, 162, 49, 0.677);
+  border: solid rgba(102, 196, 35, 0.779);
+  border-radius: 10px 5px  ;
+  outline: none;
+  margin: 5px;
+  padding: 5px;
+}
+form>button{
+  background-color: rgba(197, 200, 39, 0.405);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 20px 30px;
+  cursor: pointer;
+
+}
+.btn{
+  animation: button 1ms ease-in ;
+}
+
+@keyframes btn{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(.9);
+  }
+}
+body > div:first-child {
+  visibility: collapse;
+}
+.heading{
+  font-size: 40px;
+  font-weight: 800;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px rgba(4, 6, 45, 0.729);
+  font-family: monospace;
+  background-color: rgba(191, 209, 25, 0.662);
+}
+</Style>
+<script>
+    alert("Turn on 'Destop Site' in website Menu");
+</script>
+  </head>
+  <body background="BB1msOP2.png">
+    <div></div>
+    <div class="heading"><Center>- WEATHER -</Center></div>
+    <div class="container">
+      <div class="weather">
+        <div class="weather1"> <p> 21°</p></div>
+        <div class="weather2">
+          <p>Tokyo</p>
+          <span>13:08- wednesday 28-02-2024</span>
+        </div>
+        <div class="weather3">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <form>
+        <input type="text" class="searchBar" />
+        <button type="submit" class="btn">SEARCH</button>
+      </form>
+    </nav>
+    <script src="weather-script.js"></script>
+  </body>
+</html>

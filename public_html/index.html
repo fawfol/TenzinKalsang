@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="QR_2JavLpo5turdC0qRUmbtwf1FeRQK7WfX4VHW7JG0" />
+    <meta name="description" content="Tenzin Kalsang – A passionate software engineer and web developer dedicated to creating innovative and efficient solutions. Explore my portfolio, projects, and skills at tenzinkalsang.site">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=0.1">
+    <script>if(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {window.location.href = "/mobile-site/mobile-index.html";}</script>
+    <link rel="icon" href="assets/images/icon-logo.webp" type="image/svg+xml">
+    <title>TENZIN KALSANG</title>
+    <link rel="stylesheet" href="assets/css/style-min.css">
+    <script src="assets/js/range-animation.js"></script>
+    <script src="assets/js/ToggleNav.js"></script>
+    <script src="assets/js/hero-animation-script.js"></script>
+    <script src="assets/js/script-nav.js"></script>
+    <script src="assets/js/fade-in-script.js"></script>
+    <script src="assets/js/background-box.js"></script>
+    <script src="assets/js/scrollToDiv.js"></script>
+    <script src="assets/js/arise-quote-animation.js"></script>
+    <script src="assets/js/show-description.js"></script>
+    <script src="assets/js/light-and-dark-hold-me-hard-and-mellow.js"></script>
+    <script src="assets/js/mail-script.ts"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Tenzin Kalsang",
+            "url": "https://tenzinkalsang.site",
+            "image": "https://tenzinkalsang.site/icon-logo.webp"
+        }
+        </script>
+</head>
+<body>
+    <!--navigation bar-->
+    <nav id="navbar">
+        <div class="logo-image">
+          <p class="logo-image-text" style="color: #fff !important;">TENZIN KALSANG</p>
+        </div>
+        <button class="hamburger" onclick="toggleNav()">
+          <span onclick="toggle_nav_container()"></span>
+          <span onclick="toggle_nav_container()"></span>
+          <span onclick="toggle_nav_container()"></span>
+        </button>
+        <div class="nav-links-container">
+          <div class="nav-links">
+            <a onclick="scrollToDiv('scroll-about')"><span class="language-button-ani not-button" style="color: #fff !important;">About me</span></a>
+            <a onclick="scrollToDiv('scroll-skill')"><span class="language-button-ani not-button" style="color: #fff !important;">My skills</span></a>
+            <a onclick="scrollToDiv('scroll-project')"><span class="language-button-ani not-button" style="color: #fff !important;">My projects</span></a>
+            <a onclick="scrollToDiv('scroll-contact')"><span class="language-button-ani not-button" style="color: #fff !important;">Contact me</span></a>
+            <!--language Changer-->
+            <a href="/tibetan/tibetan.html">
+              <button id="lang-btn" class="language-toggle" data-lang="EN"><span class="language-button-ani" style="color: #fff !important;">Tibetan / བོད་ཡིག།</span></button>
+            </a>
+          </div>
+        </div>
+        <label class="theme-switch">
+            <input class="checkbox" type="checkbox" id="themeToggle" onclick="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+    </nav>
+    <!--hero content division-->
+    <div class="hero-content-slide">
+        <div class="heading-content-box">
+            <div class="silhouette-shadow">
+                <div><span class="line1">BUILD.</span></div>
+                <div><span class="line2">BREAK.</span></div>
+                <div><span class="line3">LEARN</span></div>
+                <div><span class="line4">AND</span></div>
+                <div><span class="line5">GROW.</span></div>
+            </div>
+            <div class="floater-container">
+                <div class="floater-image fi1">
+                    <img alt="aboutCoverImage" src="assets/images/ed3b8d9dd0c84d11832528e2f339d8ea-removebg-preview.webp">
+                    <div class="hover-text"><p style="margin-top: 10rem !important;">ABOUT</p><p style="margin-left: -10rem !important;">me - not much</p></div>
+                </div>
+                <div class="floater-image fi2">
+                    <img alt="skillCoverImage" src="assets/images/support-your-employees.webp">
+                    <div class="hover-text"><p>SKILL & TOOLS</p><p style="margin-left: -12.5rem !important;">Immersive Experience</p></div>
+                </div>
+                <div class="floater-image fi3">
+                    <img alt="workCoverImage" src="assets/images/1695117586-1503391350442534-preview-uffizi-scultura-02-removebg-preview.webp">
+                    <div class="hover-text"><p>WORK</p><p>Experimental projects</p></div>
+                </div>
+                <div class="floater-image fi4">
+                    <img alt="contactCoverImage" src="assets/images/male-silhouette-with-headphones.webp">
+                    <div class="hover-text"><p>CONTACT</p><p style="margin-left: -18.5rem !important;">Let's get in touch</p></div>
+                </div>
+                <div onclick="scrollToDiv('scroll-about')" class="floater-image-grid fig1"></div>
+                <div onclick="scrollToDiv('scroll-skill')" class="floater-image-grid fig2"></div>
+                <div onclick="scrollToDiv('scroll-project')" class="floater-image-grid fig3"></div>
+                <div onclick="scrollToDiv('scroll-contact')" class="floater-image-grid fig4"></div>
+            </div>
+            <!--overlapping heading DarkWide-->
+            <div class="silhouette-text">
+                <div><span class="line1">BUILD.</span></div>
+                <div><span class="line2">BREAK.</span></div>
+                <div><span class="line3">LEARN</span></div>
+                <div><span class="line4">AND</span></div>
+                <div><span class="line5">GROW.</span></div>
+            </div>
+        </div>
+    </div>    
+    <br><br><br>
+    <!--About content -->
+    <div id="scroll-about" style="visibility: collapse !important;"></div>
+    <br><br>
+    <div class="paragraph-set-division-1 fade-in">
+        <p class="vision-text vt1">VISION</p>
+        <div class="paragraph-set-content-holder">
+            <div class="paragraph-1">
+                <section>
+                    <strong class="strong">HI!, My name is Tenzin Kalsang </strong><br><br><br>
+                    "I aspire to become a skilled software engineer, I'm passionate
+                    <br>about building innovative and efficient digital solutions. I find
+                    <br>joy in programming—bringing ideas to life and seeing my code
+                    <br>work as intended. Whether developing applications or designing
+                    <br>interactive websites, I am driven by curiosity and a desire to
+                    <br>create seamless, high-performance experiences."
+                    <br><br>
+                    "Innovation is at the core of my work, and I strive to develop
+                    <br>solutions that benefit a wide audience. My primary focus is
+                    <br>software development, but I also take an interest in ensuring
+                    <br>secure and reliable systems. With a mindset of continuous
+                    <br>learning, I am committed to pushing the boundaries of<br>
+                    technology and making a meaningful impact through my work."
+                </section>
+            </div>
+            <img alt="profileCoverImage" class="para-profile-pic fade-in" src="assets/images/profile-picture-webp.webp">
+            <div class="paragraph-2 fade-in">                
+                Innovation thrives<br>where curiosity<br>meets<br>persistence
+            </div>
+        </div>
+        <p class="vision-text vt2">VISION</p>
+    </div>
+        
+    <!-- about content 2 -->
+    <div class="paragraph-set-division-1_1 fade-in">
+        <p class="vision-text vt1">ABOUT</p>
+        <div class="paragraph-set-content-holder">
+            <p class="paragraph-2_2">
+                Turning ideas<br>into code,<br>bugs into<br>lessons,and<br>websites into<br>experiences
+            </p>
+            <div class="paragraph-1_2">
+                <section>
+                        "This portfolio showcases my journey as a developer, highlighting<br>
+                        a range of projects and achievements across different areas. I've<br>
+                        tackled the complexities of both front-end and back-end development<br>
+                        You might say I'm at the point where I believe in the old adage, "if it<Br>
+                        ain't broke, don't fix it!" I'm fluent in Browser, and I enjoy the<br>
+                        challenge of transforming a plain-looking page into something beautiful.<br>
+                        And when JavaScript misbehaves, I put it in a well-placed timeout!.<br><br>
+                        While I'm learning front-end development, I'm also eager to expand my<br>
+                        skillset and become a full-stack developer. I'm always looking for ways<br>
+                        to sharpen my abilities in both design and functionality. Beyond coding<br>
+                        I'm also fascinated by network security and I'm determined to learn<br>
+                        more about cybersecurity. The logic behind secure systems is incredibly<br>
+                        compelling, and I think it's important for any good developer to understand the<br>
+                        challenges of digital security. Like Linus Torvalds, I appreciate clean,<br>
+                        efficient code and the power of open-source innovation. I love exploring new<br>
+                        technologies, optimizing performance, and creating seamless user experiences<br>
+                        Because, ultimately, great software is about more than just how it works;<br>
+                        it's about how it feels to use."
+                </section>
+            </div>
+        </div>
+        <p class="vision-text vt2">ABOUT</p>
+    </div>
+
+    <!-- skill section -->
+    <div id="scroll-skill" style="visibility: collapse !important;"></div>
+    <div class="skill-section fade-in fade-in-side">
+        <p class="vision-text vt1">SKILL DOMAIN</p>
+        <div class="paragraph-set-content-holder fade-in">
+            <div class="paragraph-1">
+                <section class="about-para">
+                    "My path in programming began early, establishing a solid<br>
+                    basis in web development. I got acquainted with HTML in 6th<br>
+                    grade and CSS during 9th grade while studying at
+                    <a href="http://www.tcv.org.in/" target="_blank" class="tcv-online-link">TCV Selakui</a>,<br>
+                    where I cultivated an interest in crafting organized and visually<br>
+                    attractive web pagea .Throughout my 11th and 12th grade at
+                    <a href="http://www.tibhomes.org/" target="_blank" class="thf-online-link">THF Mussoorie</a><br>
+                    I studied Web Application as a subject, where I received<br>
+                    formal instruction in JavaScript which enabled me to grasp the<br>
+                    functionalities of dynamic web applications under guidance of my<br>
+                    greatest computer teacher ever.
+                    <br><br>
+                    My shift into software development started in 
+                    <a href="https://hitdoon.com/" target="_blank" class="hit-online-link">Himalayan Institute<br>of Institute</a>
+                    , where I studied C in my initial semester and C++ during my<br>
+                    following semester, enhancing my grasp of programming logic and<br>
+                    framework."
+                </section>
+            </div>
+            <div class="lang-skills fade-in fade-in-range">
+                <div class="skill-range-title" id="about-range-title">
+                    <div class="tits">JAVASCRIPT</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-1" id="inner-range-box-1"></div>
+                    </div>
+                    <div class="tits">HTML</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-2" id="inner-range-box-2"></div>
+                    </div>
+                    <div class="tits">CSS</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-3" id= "inner-range-box-3"></div>
+                    </div>
+                    <div class="tits">C</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-4" id="inner-range-box-4"></div>
+                    </div>
+                    <div class="tits">CPP</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-5" id="inner-range-box-5"></div>
+                    </div>
+                    <div class="tits">SQL</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-6" id="inner-range-box-6"></div>
+                    </div>
+                    <div class="tits">BASH</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-7" id="inner-range-box-7"></div>
+                    </div>
+                    <div class="tits">JAVA</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-8" id="inner-range-box-8"></div>
+                    </div>
+                    <div class="tits">VB 6.0</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-9" id="inner-range-box-9"></div>
+                    </div>
+                    <div class="tits">x86 asm</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-10" id="inner-range-box-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="vision-text vt2 fade-in">SKILL DOMAIN</p>
+    </div>
+    <!-- skill domain paragraph set 2-->
+    <div class="skill-paragraph-set-division-2 fade-in">
+        <p class="vision-text vt1">JOURNEY</p>
+        <div class="paragraph-set-content-holder">
+            <div class="paragraph-1">
+                <section>
+                    "Outside of my main coursework,In addition to my primary<br>
+                    studies, I have also been actively broadening my abilities.<br>
+                    During my third semester, I learned SQL, that opened up the<br>
+                    realm of databases to me. And throughout during my holiday break<br>
+                    I immersed myself in Java, marking my first experience with the<br>
+                    captivating realm of object-oriented programming. Right now,<br>
+                    in my fourth semester, I'm actually working with VB 6.0 which is<br>
+                    not much of a use these days but gives me a unique opportunity to<br>
+                    explore legacy systems and how they still play a role today.<br><br>
+                    Beyond the academic side of things, I've developed a real passion<br>
+                    for Bash scripting and the command line. It's something I do as<br>
+                    a hobby to make managing system operations faster and easier.<br>
+                    I see each new skill I learn as another tool in my toolbox for<br>
+                    to refine my expertise with every project I tackle."
+                </section>
+            </div>
+            <p class="paragraph-2 fade-in">
+                Mastery begins where passion meets consistency.
+            </p>
+        </div>
+        <p class="vision-text vt2">JOURNEY</p>
+    </div>
+    
+    <!-- projects -->
+    <div id="scroll-project" style="visibility: collapse !important;"></div>
+    <section id="work" class="game-section fade-in">
+        <div class="vision-container fade-in">
+            <p class="vision-text vt1 game-vt1">EXPLORE</p>
+            <div class="game-space">
+                <h2 class="game-section-title fade-in">GAMES</h2>
+                <div class="game-grid">
+                    <div class="game-item fade-in">
+                        <a href="modular-index/Hangman/hangman-index.html">
+                            <img alt="hangmanCoverImage" src="assets/images/hangman-ss.svg" alt="Project 1" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">HANGMAN</h1>
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="modular-index/RPG/rpg-game-index.html">
+                            <img alt="rpgCoverImage" src="assets/images/rpg-ss.svg" alt="Project 3" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">RPG Dragon-Slayer</h1>
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="modular-index/TicTacToe/TicTacToe.html">
+                            <img alt="tttCoverImage" src="assets/images/Screenshot (42).svg" alt="Project 3" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">TICTACTOE</h1>                    
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="https://github.com/fawfol/MazeGame-x86asm-.git">
+                            <img alt="MazeGame-x86asm-coverimage" src="assets/images/mazecoverimg.svg" alt="Project 4" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">MAZE-GAME.asm </h1>                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="vision-text vt2 game-vt2">EXPLORE</p>
+        </div>
+    </section>
+    <div class="quote-content-box fade-in-arise fade-in">
+        <p class="quote-text">"Growth begins<br>where comfort ends."</p>
+    </div>
+    
+    <div class="PROJECTS">
+        <h2 class="project-section-title fade-in">PROJECTS</h2>
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">1. WEBSITE PORTFOLIO</p>
+                <div class="project-links-container">
+                    <p class="project-link">Link to Website
+                        <a href="https://tenzinkalsang.site/portfolio-1">Here : www.tenzinkalsang.site/portfolio-1</a>
+                    </p>
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/Epstien/responsive-website-portfolio.git">Here : GitHub Repository</a>
+                    </p>
+                    <p class="project-link">Download Zip file to extract on your device
+                        <a href="zips/PortfolioTK.zip" download>Here : Portfolio Zip</a>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        This site was my initial effort at creating an online portfolio, first established in August 2023. It acts as a digital resume, highlighting my abilities, projects, and experiences in an organized and easy-to-navigate manner. Initially, I created it aiming for a professional online presence, but since then, I have developed a newer website with enhanced design and features. Although this iteration showcases my initial web development attempts, it continues to mirror my journey and progress in programming
+                    </p>
+                </div>
+                <!-- See More Button -->
+                <button class="see-more-btn" onclick="toggleDescription(this)">
+                    See More v
+                </button>
+            </div>
+        </div>
+        <div class="project-overlay">
+            <p class="project-title">2 GeoLocation Alarm</p>    
+            <div class="project-links-container">
+                <p class="project-link">Link to website: <a href="modular-index/Geolocate-alarm/geolocate-alarm.html">Location Alarm</a></p>
+            </div>
+        </div>
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">3. EN to TIBETAN TRANSLITERATOR</p>
+                <div class="project-links-container">
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/Epstien/English-to-Tibetan-Transliterator.git">Here : GitHub Repository</a>
+                    </p>
+                    <p class="project-link">Download Zip file to extract on your device
+                        <a href="zips/Transliterator.zip" download>Here : Transliterator Zip</a>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        In my holiday month, I created an English-to-Tibetan transliterator with Java, although it remains unfinished. My objective is to incorporate this transliterator into mobile platforms, beginning with Android through Android Studio. This will enable users to effortlessly transform English text into Tibetan script on their devices. After the Android version is operational, I intend to develop it for iOS, guaranteeing a smooth experience across various platforms
+                    </p>
+                </div>
+                <!-- See More Button -->
+                <button class="see-more-btn" onclick="toggleDescription(this)">
+                    See More v
+                </button>
+                
+                
+            </div>
+        </div>
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">4. BootLoader</p>
+                <div class="project-links-container">
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/fawfol/bootloader.git">Here : GitHub Repository</a>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        Im trying to make my own OS but i think its not quiet possible for now, as my bootloader is not even able to enter protected mode for now. But other than jmp 0x08:proctected_entry not working... its pretty solid i would say
+                    </p>
+                </div>
+                <!-- See More Button -->
+                <button class="see-more-btn" onclick="toggleDescription(this)">
+                    See More v
+                </button>
+            </div>
+        </div>
+        
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">5. OTHERS</p>
+                <div class="project-links-container">
+           
+                    <p class="project-link">
+                        FLUID SIMULATOR :
+                        <a href="modular-index/Fluidsim/fluidsim.html">Why the hell is this shit so hard
+                            <br><span class="numb-nuts" style="color: rgb(191, 189, 189) !important; font-size:0.8rem !important"> Doesnt work on computer BTW Coz Im LAZYYYY</span></a>
+                    </p>
+                    <p class="project-link">
+                        UIIAIU UUIIAIU : 
+                        <a href="https://www.youtube.com/watch?v=ZHgyQGoeaB0"> uiiaiu uuiiaiu uiiaiu uuiiaiu</a>
+                    </p>
+                </div>
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        There is nothing to see here. Just press the SeeLess button and close the site. GO SLEEP MATE FR.
+                    </p>
+                </div>
+                <!-- See More Button -->
+                <button class="see-more-btn" onclick="toggleDescription(this)">
+                    See More v
+                </button>
+            </div>
+        </div>    
+    </div>
+    <div class="quote-content-box fade-in">
+        <p class="quote-text">"When you are speaking,<br>You're just repeating what you know.<br>"But when you stay quiet and listen,<br>you might learn something new!"</p>
+    </div>
+
+
+   <!-- final page -->
+<div class="final-page">
+    <div id="scroll-contact" style="visibility: collapse !important;"></div>
+    <div class="contact-class" id="contact-id">
+        <p class="blog-heading-contact" id="blog-heading-contact">Contact</p>
+        <div class="contact-description" id="contact-description">I would love to hear from you</div>
+        <div class="contact-form" id="contact-form">
+                <p class="contact-form-text" id="contact-form-text">Tell me about your concern</p><br><br>
+                <form action="https://formspree.io/f/mldebeze" method="POST">
+                    <div class="form-div-all"><label for="first-name" class="form-text-description" id="first-name">First
+                            name</label><input type="text" minlength="3" maxlength="20" placeholder="Required"
+                            class="form-input" id="first-name-input" name="fname-name" required>
+                    </div>
+                    <div class="form-div-all"><label for="last-name" class="form-text-description" id="last-name">Last
+                            name </label><input type="text" minlength="3" maxlength="20" placeholder="Required"
+                            class="form-input" id="last-name-input" name="lname-name" required>
+                    </div>
+                    <div class="form-div-all phone-number-container">
+                            <label for="phone-number" class="form-text-description" id="phone-number">Phone</label>
+                            <select size="1" name="countryCode" id="phone-country-code" class="phone-country-code">
+                                <option data-countryCode="IN" value="91" selected>India (+91)</option>
+                                <optgroup label="Other countries">
+                                    <option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+                                </optgroup>
+                            </select>
+                            <input minlength="7" maxlength="14" placeholder="optional" type="numbers" class="form-input"
+                                id="phone-input" name="phone-name">
+                    </div>  
+                    <div class="form-div-all"><label for="mail" class="form-text-description"
+                            id="mail">Mail</label><input type="email" placeholder="Required" minlength="12"
+                            class="form-input" id="mail-input" name="mail-name" required></div>
+                    <div class="form-div-all"><label for="message" class="form-text-description"
+                            id="message-text">Queries</label><textarea minlength="20"
+                            placeholder="How can you help me help you?" id="message-input" name="message-name"
+                            required></textarea></div>
+                    <div><button class="contact-form-submit" name="submit" type="submit" value="SEND">SEND
+                        </button></div>
+                    <div><button class="contact-form-reset" name="reset" type="reset" value="CLEAR">CLEAR</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <!-- Social media links container OUTSIDE the contact box -->
+    <div class="social-links-container">
+        <p class="social-heading"> SOCIAL LINKS : </p>
+        <div class="contact-instagram-link-div" id="contact-instagram-div">
+            <a href="https://www.instagram.com/tttt___kalsang/"><font class="contact-social-link-text">Instagram : tttt___kalsang</font></a>
+        </div>
+        <div class="contact-twitter-link-div" id="contact-twitter-div" >
+            <a href="https://x.com/Hilarious_Monke"><font class="contact-social-link-text">Twitter X : Hilarious_Monke</font></a>
+        </div>
+        <div class="contact-linkedin-link-div" id="contact-linkedin-div">
+           <a href="https://www.linkedin.com/in/tenzin-kalsang-090985285/" ><font class="contact-social-link-text">LinkedIn : Tenzin&nbsp;Kalsang</font></a>
+        </div>
+        <div class="contact-twitter-link-div" id="contact-twitter-div" >
+            <a href="https://github.com/fawfol"><font class="contact-social-link-text">GitHub : FAWFOL</font></a>
+        </div>
+        <a href="copyright.html" class="legal-link">LEGAL</a>
+    </div>
+
+    <p class="easter" style="margin-bottom: 1rem !important">: I LOVE CAPPUCCINO & LONG SOCKS :<br>And Im Bad at Explaining Things
+    </p>
+</div>
+
+</body>
+</html>

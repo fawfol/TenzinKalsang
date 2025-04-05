@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon-logo.png" type="image/svg+xml">
+    <title>བསྟན་འཛིན་སྐལ་བཟང་</title>
+    <link rel="stylesheet" href="tibetan_style.css">
+    <script src="hero-animation-script.js"></script>
+    <script src="script-nav.js"></script>
+    <script src="strip-refresher-script.js"></script>
+    <script src="fade-in-script.js"></script>
+    <script src="fade-opac-script.js"></script>
+    <script src="background-box.js"></script>
+</head>
+<body onload="startTransition()">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+/* Move SweetAlert2 popup to top-left */
+.swal2-popup {
+    color: black;
+    margin: 10px !important; /* Keeps some space from edges */
+    transform: none !important; /* Prevents centering */
+}
+</style>
+
+<script>
+if (true){ 
+    Swal.fire({
+        title: "⚠️ This page is Under Development",
+        html: `
+            <p style="margin-top: 10px; font-size: 16px; color:black;">
+            Tibetan section is not working and is incomplete<br>due to laziness and receding hairline<br>
+            It will take much time for this page to have workable UI<br>
+            </p>
+        `,
+        showConfirmButton: true, /* Shows OK button */
+        confirmButtonColor: "#3085d6",
+        allowOutsideClick: false,  /* Prevents closing when tapping outside */
+        allowEscapeKey: false,  /* Prevents closing with the ESC key */
+        allowEnterKey: false  /* Prevents closing by pressing Enter */
+    });
+}
+</script>
+
+    <!--navigation bar-->
+    <nav id="navbar">
+        <div class="logo-image">
+            <p class="logo-image-text">བསྟན་འཛིན་སྐལ་བཟང་།</p>
+        </div>
+        <div class="nav-links">
+            <a href="#" onclick="startTransition()"><span class="about-text">ངའི་སྐོར།</span></a>
+            <a href="#" onclick="startTransition()"><span class="project-text">ངའི་ལས་གཞི།</span></a>
+            <a href="#" onclick="startTransition()"><span class="gallery-text">ངའི་པར་རིས།</span></a>
+            <a href="#" onclick="startTransition()">ངའི་འབྲེལ་ལམ།</a>
+            <!--language Changer-->
+            <a href="index.html">
+                <button id="lang-btn" class="language-toggle" data-lang="EN"><span class="language-button-ani">English / དབྱིན་་སྐད།</span></button>
+            </a>
+        </div>
+    </nav>
+    
+    <!--hero content division-->
+    <div class="hero-content-slide">
+        <div class="heading-content-box">
+            <div class="silhouette-shadow">
+                <div><span class="line1">རྩིགས།</span></div>
+                <div><span class="line2">ཆོགས།</span></div>
+                <div><Span class="line3">སྦྱངས་</Span></div>
+                <div><span class="line4">ནས་</span></div>
+                <div><span class="line5">འཚར།</span></div>
+            </div>
+            <div class="floater-container">
+                <div class="floater-image fi1">
+                    <img src="meintibetan.png">
+                    <div class="hover-text"><p>ངའི་སྐོར།</p><p>མང་པོ་མེད།</p></div>
+                </div>
+                <div class="floater-image fi2">
+                    <img src="support-your-employees.webp">
+                    <div class="hover-text"><p>ངའི་ལས་གཞི།</p><p>ཚོད་ལྟའི་ལས་གཞི།</p></div>
+                </div>
+                <div class="floater-image fi3">
+                    <img src="1695117586-1503391350442534-preview-uffizi-scultura-02-removebg-preview.png">
+                    <div class="hover-text"><p>ངའི་པར་རིས</p><p>གཏིང་ཟབ་ཉམས་མྱོང་།</p></div>
+                </div>
+                <div class="floater-image fi4">
+                    <img src="male-silhouette-with-headphones.png">
+                    <div class="hover-text"><p>འབྲེལ་ལམ།</p><p >འབྲེལ་བ་བྱེད་རོགས།</p></div>
+                </div>
+                <div class="floater-image-grid fig1"></div>
+                <div class="floater-image-grid fig2"></div>
+                <div class="floater-image-grid fig3"></div>
+                <div class="floater-image-grid fig4"></div>
+            </div>
+            <!--overlapping heading DarkWide-->
+            <div class="silhouette-text">
+                <div><span class="line1">རྩིགས།</span></div>
+                <div><span class="line2">ཆོགས།</span></div>
+                <div><Span class="line3">སྦྱངས་</Span></div>
+                <div><span class="line4">ནས་</span></div>
+                <div><span class="line5">འཚར།</span></div>
+            </div>
+        </div>
+    </div>    
+    
+    <!--video content->
+    <div class="video-content-div fade-in" >
+        <video controls autoplay>
+            <source src="#.mp4" poster="Screenshot (29).png" type="video/mp4">
+        </video>
+    </div -->
+    <!--paragraph content 1 -->
+    <div class="paragraph-set-division-1 fade-in">
+        <p class="vision-text vt1">མ་འོངས་མཐོང་རྒྱ།</p>
+        <div class="paragraph-set-content-holder">
+            <div class="paragraph-1">
+                <section>
+                    "ང་མཉེན་ཆས་བཟོ་སྐྲུན་པ་ཞིག་བྱེད་འདོད་ང་ཧ་ཅང་ཡོད།<br>
+                    གསར་གཏོད་དང་ཕན་ནུས་ལྡན་པའི་དྲ་རྒྱའི་ཐབས་ཤེས་འཛུགས་སྐྲུན་<br>
+                    བྱེད་སྐབས་ངས་འདི་ལས་རིམ་བཟོ་བའི་དགའ་སྤྲོ་རྙེད་སོང་།<br>
+                    བསམ་བློ་དེ་འཚོ་བར་འཁྱེར་ནས་ངའི་གསང་གྲངས་ལ་ལྟོས།<br>
+                    དམིགས་འབེན་ལ་གཞིགས་ནས་ལས་ཀ་བྱེད་དགོས།<br>
+                    ཉེར་སྤྱོད་བཟོ་སྐྲུན་དང་ཇུས་འགོད་ཡིན་ནའང་འདྲ།<br>
+                    འབྲེལ་གཏུག་དྲ་ཚིགས། ང་ཤེས་འདོད་དང་འདོད་པས་སྐུལ་མ་བཏང་ཡོད།<br>
+                    གཅིག་གྱུར་དང་བྱེད་ནུས་མཐོ་བའི་ཉམས་མྱོང་བསྐྲུན་དགོས།."<br><br>
+                    ལག་རྩལ་གྱི་རྒྱུ་མཚན་གྱིས་གསར་གཏོད་ཀྱི་ནུས་པ་ནམ་ཡང་བཀག་འགོག་བྱེད་མི་ཐུབ།<br>
+                    གློག་ཀླད་ཀྱི་ལས་རིམ་གྱི་ཞིབ་ཚགས་དང་སྒྱུ་རྩལ་གྱི་ཚོར་སྣང་གཏན་འཇགས་འཕེལ་རྒྱས་སུ་བཏང་ཡོད། <br>
+                </section>
+            </div>
+            <p class="paragraph-2 fade-in">
+                <br>ཤེས་འདོད་ཆེན་པོ་དང་<br>བརྩོན་འགྲུས་མཉམ་དུ་འཛོམས་སར་<br>གསར་གཏོད་འཕེལ་རྒྱས་འགྲོ
+            </p>
+        </div>
+        <p class="vision-text vt2">མ་འོངས་མཐོང་རྒྱ།</p>
+    </div>
+    
+    <!-- paragraph content 2-->
+    <div class="paragraph-set-division-1_1 fade-in">
+        <p class="vision-text vt1">SKILL DOMAIN</p>
+        <div class="paragraph-set-content-holder">
+            <p class="paragraph-2_2">
+                Several views<br>
+                and a single<Br>
+                vision to reach<br>
+                what is the most<br>
+                complex : keeping<Br>it simple
+            </p>
+            <div class="paragraph-1_2">
+                <section>
+                    At PHA5E, our creativity can never be held back for technical
+                    <br>reasons. This is why our talented team herald from very
+                    <br>different backgrounds, so that they can offer varied points of
+                    <br>view and find the best technical solution every time.
+                    <br>Precision of the code and artistic sensitivity are permanently
+                    <br>fostered.<br><br>
+                    In a search for excellence, PHA5E constantly strives to enrich
+                    <br>its group with new personalities and new skills.<Br><Br>
+                    For our clients, we create interactive installations, immersive
+                    <Br>experiences in AR/VR or intuitive sites, while always taking
+                    <br>care to offer a response that best illustrates the codes and
+                    <Br>values specific to each professional.
+                </section>
+            </div>
+        </div>
+        <p class="vision-text vt2">SKILL DOMAIN</p>
+    </div>
+
+    <!--distinctions blog-->
+    <div class="distinction-blog fade-in-side">
+        <p class="distinction-blog-heading">OUR DISTINCTIONS</p><Br>
+        <img src="d1.svg"><br>
+        <p class="distinction-blog-description">The awards received are testimony to the recognition<br>of the cutting-edge know-how and high standards of our studio.</p>
+    </div>
+
+    <!--final page-->
+    <div class="final-page">
+        <!--navigation bar-->
+        <div class="final-page-nav">
+            <p>PHA5E</p>
+            <div class="final-nav-links">
+                <a href="#" onclick="startTransition()">Our vision</a>
+                <a href="#" onclick="startTransition()">Our team</a>
+                <a href="#" onclick="startTransition()">Our project</a>
+                <a href="#" onclick="startTransition()">Contact us</a>
+                <!--language Changer-->
+                <button class="language-toggle">FR<b>/</b>EN</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
