@@ -1330,15 +1330,15 @@ video{
     outline: none;
 }
 
-textarea {background-color: #dadadad5;
+textarea {background-color: transparent;
     height: 150px;
     width: 90%;
     margin-right: 0;
-    border: 0.18 solid #9f9e9e;
+    border: 0.18 solid #dfdfdf;
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
-    color: #333;
+    color: #fff;
     resize: vertical;
 }
 
