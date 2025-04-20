@@ -1314,15 +1314,15 @@ video{
 }
 
 .form-input {
-    background-color: #dadadad5;
+    background-color: transparent;
     height: 1.2rem;
     width: 90%;
     margin-right: 0;
-    border: 0.15rem solid #4949491b;
+    border-bottom: 0.15rem solid #dfdfdf;
     border-radius: 5px;
     padding: 0.3rem;
     font-size: 1rem;
-    color: #000000;
+    color: #fff;
 }
 
 .form-input:focus {
