@@ -1,16 +1,3 @@
-/* font import*/
-@font-face {
-    font-family: 'Druk Wide Bold Bold';
-    font-style: normal;
-    font-weight: 800;
-    src: local('Druk Wide Bold Bold'), url('DrukWide-Bold-Web.woff') format('woff');
-}
-@font-face {
-    font-family: 'Area Normal';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Druk Wide Bold Bold'), url('AreaNormal-Semibold.woff') format('woff');
-}
 link[rel="icon"] {
     border-radius: 50%;
 }
