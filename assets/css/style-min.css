@@ -53,7 +53,7 @@ body{
     position: absolute;
     width: 70%;
     height: 70%;
-    border: 0.2rem solid rgb(137, 134, 134);
+    border: 0.2rem solid rgb(137, 134, 133);
     opacity: 0.4;
     transform: rotate(5deg);
     top: 15%;
@@ -177,7 +177,7 @@ nav{
     background-color: white !important;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.45s ease-in-out;
 }
 .language-button-ani:hover::after {
     transform: scaleX(1);
@@ -199,7 +199,7 @@ nav{
     width: 50%;
     height: 2px;
     background-color: white;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.35s ease-in-out;
 }
 
 /* Switch container */
