@@ -10,6 +10,34 @@
     scrollbar-width: none;
 }
 
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+#google_translate_element {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#google_translate_element select {
+  background-color: #f2f2f2;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 /*background design*/
 .circle {
     position: fixed;
@@ -107,7 +135,7 @@ nav.hidden {
 
 /* Circle inside the slider */
 .slider::before {
-    content: "🌙";
+    content: "ðŸŒ™";
     position: absolute;
     height: 1.6rem;
     width: 1.6rem;
@@ -127,7 +155,7 @@ nav.hidden {
 }
 
 .checkbox:checked + .slider::before {
-    content: "🌞";
+    content: "ðŸŒž";
     transform: translateX(1.25rem);
     background-color: black;
     color: white;
@@ -300,8 +328,8 @@ section{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 16rem;
-    height: 14rem;
+    width: 17rem;
+    height: 12rem;
 }
 
 .lang-skills {
@@ -391,8 +419,10 @@ section{
     max-width: 200px;
     max-height: 200px;
 }
+
 .final-page {
     margin-top: 10rem;
+    padding-bottom : 15rem;
     color: #000000;
     position: absolute;
     width: 100%;
@@ -405,153 +435,174 @@ section{
     align-items: flex-start;
     justify-content: center;
 }
-.contact-class {
-    margin-top: 5rem;
+#contact-id {
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #4a4a4a, #3c3c3c);
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+    margin: 2rem;
+    margin-bottom: 7rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    color: #eaeaea;
     text-align: center;
-}
-
-.contact-form {
-    width: 80vw;
-    max-width: 400px;
-    padding: 15px;
-    border-radius: 15px;
-    background-color: #7b7a7aa1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin: auto;
-    backdrop-filter:blur(2px);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .blog-heading-contact {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 2.7rem;
+    margin-bottom: 0.5rem;
     color: #ffffff;
+    font-weight: 700;
+}
+
+.contact-description {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    background-color: #2d2d2d;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 .contact-form-text {
     font-size: 1.2rem;
-    color: #ffffff;
-    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .form-div-all {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: left;
 }
 
 .form-text-description {
-    font-weight: bold;
     font-size: 1rem;
-    color: #000000;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
     display: block;
-    margin-bottom: 5px;
 }
 
 .form-input,
 textarea {
-    width: 95vw;
-    max-width: 96vw;
-    background-color: #dadadad5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 0.2rem;
+    background: #444;
+    color: #f9f9f9;
+    border: 2px solid #666;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
     font-size: 1rem;
-    color: #000000;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus,
+textarea:focus {
+    border-color: #03afff;
+    box-shadow: 0 0 5px rgba(3, 175, 255, 0.4);
+    outline: none;
 }
 
 textarea {
-    height: 100px;
+    height: 120px;
     resize: vertical;
-}
-
-textarea:focus,
-.form-input:focus {
-    border-color: #0198f7;
-    outline: none;
 }
 
 .phone-number-container {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.phone-number-container .form-text-description {
+    flex-basis: 100%;
+    margin-bottom: 0.3rem;
 }
 
 .phone-country-code {
-    width: 100%;
-    max-width: 200px;
-    background-color: #5f5c5c;
-    color: white;
-    padding: 5px;
-}
-
-.phone-country-code option {
+    flex: 1 1 40%;
+    background: #ddd;
+    color: #111;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
     font-size: 1rem;
 }
 
+.phone-number-container input {
+    flex: 1 1 55%;
+}
+
 .contact-form-submit {
-    width: 50vw;
-    max-width: 95vw;
-    margin-top: 10px;
+    width: 100%;
     padding: 12px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    background-color: #ffffffc0;
-    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #03afff;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form-submit:hover {
-    background-color: #cbcbcba0;
+    background-color: #0299db;
 }
 
-/* New styles for the social links container */
+.contact-form-reset {
+    display: none;
+}
+
+
+/* SOCIAL LINKS */
 .social-links-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem;
-    width: 95vw;
+    margin-top: 3rem;
+    width: 100%;
 }
-.social-heading{
-    font-size: 2rem;
+
+.social-heading {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
 }
+
 .contact-facebook-link-div,
 .contact-instagram-link-div,
 .contact-twitter-link-div,
 .contact-linkedin-link-div {
-    margin: 0.7rem 0;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    transition: none;
+    margin: 0.5rem 0;
 }
 
 .contact-social-link-text {
-    display: block;
-    color: #9e9a9a;
-    font-size: 1.3rem;
+    color: #cccccc;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-top: 5px;
     text-align: center;
-    /* Center the text */
 }
 
-/* Style for the LEGAL link */
+/* LEGAL LINK */
 .legal-link {
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     text-decoration: none;
-    margin-top: 4.5rem;
-    /* Add some space above the link */
+    margin-top: 3rem;
+    text-align: center;
 }
-.easter{
-    bottom: 0;
-    margin-bottom: 5rem;
-    left: auto;
-    right: auto;
-    top: auto;
-    font-size: 0.8rem;
+
+/* EASTER EGG / FOOTER TEXT */
+.easter {
+    margin-top: 3rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
