@@ -89,7 +89,7 @@
 
 
   function initMap() {
-    console.log("🗺️ Map init triggered");
+    console.log("Map init triggered");
     map = L.map('map').setView([20, 78], 5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -97,13 +97,13 @@
     }).addTo(map);
 
     if (!navigator.geolocation) {
-      alert("❌ Geolocation is not supported by your browser.");
+      alert("Geolocation is not supported by your browser.");
       return;
     }
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log("✅ Got position", position);
+        console.log("Got position", position);
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
         map.setView([lat, lng], 13);
@@ -118,7 +118,7 @@
         startTracking();
       },
       (err) => {
-        alert("❌ Geolocation error: " + err.message);
+        alert("Geolocation error: " + err.message);
         console.error("Geolocation error:", err);
       }
     );
@@ -137,7 +137,7 @@
     .then(res => res.json())
     .then(data => {
       if (!data || data.length === 0) {
-        alert("❌ Location not found.");
+        alert("ocation not found.");
         return;
       }
 
@@ -174,7 +174,7 @@
         lng: position.coords.longitude
       };
 
-      console.log("📍 Tracking user at:", userPos);
+      console.log("Tracking user at:", userPos);
 
       if (currentMarker) map.removeLayer(currentMarker);
       currentMarker = L.marker([userPos.lat, userPos.lng])
