@@ -5,6 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script> if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){window.location.href = "../index.html";}</script>   
+    <!-- Other head content -->
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'ja, bo', //
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'ja,bo',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+    
     <meta name="google-site-verification" content="QR_2JavLpo5turdC0qRUmbtwf1FeRQK7WfX4VHW7JG0" />
     <meta name="description" content="Tenzin Kalsang – Aspiring software engineer and full stack developer dedicated to creating innovative and efficient solutions. Explore my portfolio, projects, and skills at tenzinkalsang.site">
     <link rel="icon" href="../assets/images/icon-logo.webp" type="image/svg+xml">
@@ -42,12 +65,13 @@
                 <span class="line"></span>
         </label>
     
-        <ul class="nav-menu">
-            <li><a onclick="scrollToDiv('vision')" style="color: white !important;">Vision</a></li>
+        <ul id ="navham" class="nav-menu">
+            <li><a onclick="scrollToDiv('vision') " style="color: white !important;">Vision</a></li>
             <li><a onclick="scrollToDiv('about')" style="color: white !important;">About me</a></li>
             <li><a onclick="scrollToDiv('skill')" style="color: white !important;">My skills</a></li>
             <li><a onclick="scrollToDiv('project')" style="color: white !important;">My projects</a></li>
             <li><a onclick="scrollToDiv('contact')" style="color: white !important;">Contact me</a></li>
+            <li><div id="google_translate_element"></div></li>
         </ul>
     </div>
 </nav>    
@@ -85,7 +109,7 @@ alongside experienced teams."
     <div class="segments">
         <img class="profile-picture" alt="nothing to see here" src="../assets/images/profile-picture-webp.webp">
         <br><span class="quote">
-            Turning ideas into Code<br>bugs into Lessons<br>And<br>Websites into Experiences
+            <br>Turning ideas into Code<br>bugs into Lessons<br>And<br>Softwares into Experiences
         </span>
     </div>
     <div class="segments" id="about">
@@ -134,7 +158,7 @@ alongside experienced teams."
                     <div class="range-box">
                         <div class="inner-range-box-8" data-width="20%" id="inner-range-box-8"></div>
                     </div>
-                    <div class="tits">Visual Basic</div>
+                    <div class="tits">React</div>
                     <div class="range-box">
                         <div class="inner-range-box-9" data-width="40%" id="inner-range-box-9"></div>
                     </div>
@@ -159,16 +183,20 @@ alongside experienced teams."
             <span class="italica-words">- GAMES -</span>
             <div class="wrapper ">
                 <div class="card">
+                    <h2>Fling(JumpKing inspired)</h2><br>
+                    <a href="../modular-index/Fling/index.html"><img src="../assets/images/flingcover.png" alt="fling game cover ss"></a><br>Swipe for more
+                </div>
+                <div class="card">
                     <h2>RolePlay Game</h2><br>
-                    <a href="../modular-index/RPG/rpg-game-index.html"><img src="../assets/images/rpg-project-ss.webp" alt="rpg-ss"></a><br>Swipe for more
+                    <a href="../modular-index/RPG/index.html"><img src="../assets/images/rpg-project-ss.webp" alt="rpg-ss"></a>
                 </div>
                 <div class="card">
                     <h2>Hangman Game</h2><br>
-                    <a href="../modular-index/Hangman/hangman-index.html"><img src="../assets/images/hangman-project-ss.webp" alt="hangman-ss"></a>
+                    <a href="../modular-index/Hangman/index.html"><img src="../assets/images/hangman-project-ss.webp" alt="hangman-ss"></a>
                 </div>
                 <div class="card">
                     <h2>TicTacToe Game</h2><br>
-                    <a href="../modular-index/TicTacToe/TicTacToe.html"><img src="../assets/images/tictactoe-project-ss.webp" alt="tictactoe-ss"></a>
+                    <a href="../modular-index/TicTacToe"><img src="../assets/images/tictactoe-project-ss.webp" alt="tictactoe-ss"></a>
                 </div>
                 <div class="card">
                     <h2>Maze-Game.asm</h2><br>
@@ -188,6 +216,8 @@ alongside experienced teams."
         <div class="glass">
             <span class="italica-words">- PROJECTS -</span>
             <div class="wrapper ">
+            
+            
                 <div class="card">
                     <h2>Website-1</h2><br>
                     <a href="../portfolio-1/index.html" target="_blank"><img alt="My first website that I created after learnin JS, this took me a while to make an learnt many things along the way to this result" src="../assets/images/portfolio pic.webp"></a><br>
@@ -197,6 +227,9 @@ alongside experienced teams."
                     </p>
                     Swipe for more
                 </div>
+                
+                
+                
                 <div class="card">
                     <h2>Transliterator</h2><br>
                     <a href="https://github.com/Epstien/English-to-Tibetan-Transliterator.git" target="_blank"><img alt="Transliterates Englihs word to tibetan word of its pronunciaiton" src="../assets/images/fbd56a9f-ce96-4149-8add-1904c38aab74.webp"></a><br>
@@ -205,6 +238,18 @@ alongside experienced teams."
                         <br><a style="color: aqua;" href="../zips/Transliterator.zip" download>Tap this Download Zip resource</a>
                     </p>
                 </div>
+                
+                <div class="card">
+                     <h2>DUOGRAM App</h2><br>
+                     <a href="https://github.com/fawfol/DUOGRAM" target="_blank">            
+                         <img src="../assets/images/fbd56a9f-ce96-4149-8add-1904c38aab74.webp"></a><br>
+                         <p class="description">
+                             You can download it throught link<br>100% safe trust me lol <br><a href="">DUOGRAMv1.0</a>
+                         </p>                         
+                </div>
+                
+                
+                
                 <div class="card">
                     <h2>Bootloader</h2><br>
                     <a href="https://github.com/fawfol/bootloader.git" target="_blank"><img alt="Tbootloader" src="../assets/images/fbd56a9f-ce96-4149-8add-1904c38aab74.webp"></a><br>
@@ -213,9 +258,10 @@ alongside experienced teams."
                    </p>
                    
                 </div>
+                
                 <div class="card">
                     <h2>GeoLocation-Alarm</h2><br>
-                    <a href="../modular-index/Geolocate-alarm/geolocate-alarm.html" target="_blank"><img alt="This is my first project idea which is basically an alamr but location based alarm rahter than classic time based." src="../assets/images/Screenshot (61).webp"></a><br>
+                    <a href="../modular-index/Geolocate-alarm" target="_blank"><img alt="This is my first project idea which is basically an alamr but location based alarm rahter than classic time based." src="../assets/images/Screenshot (61).webp"></a><br>
                     <p class="description">
                         A location based Alarm made with use of Google map API
                     </p>
@@ -227,9 +273,10 @@ alongside experienced teams."
                         <a style="text-decoration: none;" href="https://fawfol.github.io/TenzinKalsang/">https://fawfol.github.io/TenzinKalsang/  Hosted with github</a>
                     </p>
                 </div>
+                
                 <div class="card">
                     <h2>Fluid Simulator</h2><br>
-                    <a href="../modular-index/Fluidsim/fluidsim.html"><img alt="I tried to conquer this difficult ~sidequest~ of simulating fluid dynamic with three.js and js with html and css framewrk" src="../assets/images/Screenshoto.webp"></a><br>
+                    <a href="../modular-index/Fluidsim"><img alt="I tried to conquer this difficult ~sidequest~ of simulating fluid dynamic with three.js and js with html and css framewrk" src="../assets/images/Screenshoto.webp"></a><br>
                     <p class="description">
                         Tried making a Fluid dynamic Simulator
                     </p>
@@ -389,7 +436,7 @@ alongside experienced teams."
         <div class="contact-twitter-link-div" id="contact-twitter-div" >
             <a href="https://github.com/fawfol"><font class="contact-social-link-text">GitHub : FAWFOL</font></a>
         </div>
-        <a href="../zips/Tenzin_Kalsang_Resume.docx" class="legal-link">RESUME</a>
+        <a href="../zips/KalsangResume.pdf" class="legal-link" download>RESUME</a>
         <a href="../copyright.html" class="legal-link">LEGAL</a><br><br><br><br>
 </div>
     <p class="easter" style="margin-bottom: 1rem !important">: I LOVE CAPPUCCINO & LONG SOCKS :<br>And Im Bad at Explaining Things<br><br>I prolly have ADHD </p>
