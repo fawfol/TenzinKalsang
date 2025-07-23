@@ -6,8 +6,33 @@
     <meta name="google-site-verification" content="QR_2JavLpo5turdC0qRUmbtwf1FeRQK7WfX4VHW7JG0" />
     <meta name="description" content="Tenzin Kalsang – A passionate software engineer and web developer dedicated to creating innovative and efficient solutions. Explore my portfolio, projects, and skills at tenzinkalsang.site">
     <meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=0.1">
+    <script>if(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {window.location.href = "/mobile-site/mobile-index.html";}</script>
     <link rel="icon" href="assets/images/icon-logo.webp" type="image/svg+xml">
     <title>TENZIN KALSANG</title>
+      <!-- Other head content -->
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'ja,bo', // Japanese and Tibetan
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'ja','bo',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+    
     <link rel="stylesheet" href="assets/css/style-min.css">
     <script src="assets/js/range-animation.js"></script>
     <script src="assets/js/ToggleNav.js"></script>
@@ -20,13 +45,17 @@
     <script src="assets/js/show-description.js"></script>
     <script src="assets/js/light-and-dark-hold-me-hard-and-mellow.js"></script>
     <script src="assets/js/mail-script.ts"></script>
-    <script type="application/ld+json">{"@context": "https://schema.org","@type": "Person","name": "Tenzin Kalsang","url": "https://tenzinkalsang.site","image": "https://tenzinkalsang.site/icon-logo.webp"}</script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Tenzin Kalsang",
+            "url": "https://tenzinkalsang.site",
+            "image": "https://tenzinkalsang.site/icon-logo.webp"
+        }
+        </script>
 </head>
 <body>
-    
-    <!-- page redirect -->
-    <script> if (!/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){window.location.href = "../index.html";}</script>   
-    
     <!--navigation bar-->
     <nav id="navbar">
         <div class="logo-image">
@@ -43,10 +72,12 @@
             <a onclick="scrollToDiv('scroll-skill')"><span class="language-button-ani not-button" style="color: #fff !important;">My skills</span></a>
             <a onclick="scrollToDiv('scroll-project')"><span class="language-button-ani not-button" style="color: #fff !important;">My projects</span></a>
             <a onclick="scrollToDiv('scroll-contact')"><span class="language-button-ani not-button" style="color: #fff !important;">Contact me</span></a>
+            <div id="google_translate_element"></div>
+            
             <!--language Changer-->
-            <a href="/tibetan/tibetan.html">
+            <!-- <a href="/tibetan/tibetan.html">
               <button id="lang-btn" class="language-toggle" data-lang="EN"><span class="language-button-ani" style="color: #fff !important;">Tibetan / བོད་ཡིག།</span></button>
-            </a>
+            </a> -->
           </div>
         </div>
         <label class="theme-switch">
@@ -105,20 +136,20 @@
         <div class="paragraph-set-content-holder">
             <div class="paragraph-1">
                 <section>
-                    <strong class="strong">HI!, My name is Tenzin Kalsang </strong><br><br><br>
-                    "I aspire to become a skilled software engineer, I'm passionate
-                    <br>about building innovative and efficient digital solutions. I find
-                    <br>joy in programming—bringing ideas to life and seeing my code
-                    <br>work as intended. Whether developing applications or designing
-                    <br>interactive websites, I am driven by curiosity and a desire to
-                    <br>create seamless, high-performance experiences."
-                    <br><br>
-                    "Innovation is at the core of my work, and I strive to develop
-                    <br>solutions that benefit a wide audience. My primary focus is
-                    <br>software development, but I also take an interest in ensuring
-                    <br>secure and reliable systems. With a mindset of continuous
-                    <br>learning, I am committed to pushing the boundaries of<br>
-                    technology and making a meaningful impact through my work."
+                    <strong class="strong">HI!, My name is Tenzin Kalsang</strong><br><br><br>
+                      — an aspiring software developer.
+                    <Br>I enjoy solving problems with code and building tools that are simple,
+                    <Br> functional, and meaningful.
+                    <Br>My journey started in school with HTML, CSS,and JavaScript. 
+                    <Br>
+                      In college, I expanded my foundation through C, C++, and SQL.
+                    <Br>Out of pure curiosity, I took the initiative to learn Java and x86 assembly
+                    <Br>to deepen my understanding of how software & systems work at a low level
+                    <Br>I believe in a hands-on approach: build, break, learn, and grow.
+                    <Br>Each project I take on is a chance to learn something new and improve.
+                    <Br>As an aspiring developer, I'm looking for opportunities to learn from 
+                    <Br>real-world challenges, contribute to meaningful projects and grow
+                    <Br>alongside experienced teams."
                 </section>
             </div>
             <img alt="profileCoverImage" class="para-profile-pic fade-in" src="assets/images/profile-picture-webp.webp">
@@ -134,7 +165,7 @@
         <p class="vision-text vt1">ABOUT</p>
         <div class="paragraph-set-content-holder">
             <p class="paragraph-2_2">
-                Turning ideas<br>into code,<br>bugs into<br>lessons,and<br>websites into<br>experiences
+                Turning ideas<br>into code,<br>bugs into<br>lessons,and<br>Softwares into<br>experiences
             </p>
             <div class="paragraph-1_2">
                 <section>
@@ -214,7 +245,7 @@
                     <div class="range-box">
                         <div class="inner-range-box-6" id="inner-range-box-6"></div>
                     </div>
-                    <div class="tits">BASH</div>
+                    <div class="tits">PYTHON</div>
                     <div class="range-box">
                         <div class="inner-range-box-7" id="inner-range-box-7"></div>
                     </div>
@@ -222,11 +253,11 @@
                     <div class="range-box">
                         <div class="inner-range-box-8" id="inner-range-box-8"></div>
                     </div>
-                    <div class="tits">VB 6.0</div>
+                    <div class="tits">React</div>
                     <div class="range-box">
                         <div class="inner-range-box-9" id="inner-range-box-9"></div>
                     </div>
-                    <div class="tits">x86 asm</div>
+                    <div class="tits">x86 ASM</div>
                     <div class="range-box">
                         <div class="inner-range-box-10" id="inner-range-box-10"></div>
                     </div>
@@ -246,7 +277,7 @@
                     During my third semester, I learned SQL, that opened up the<br>
                     realm of databases to me. And throughout during my holiday break<br>
                     I immersed myself in Java, marking my first experience with the<br>
-                    captivating realm of object-oriented programming. Right now,<br>
+                     object-oriented programming. Right now,<br>
                     in my fourth semester, I'm actually working with VB 6.0 which is<br>
                     not much of a use these days but gives me a unique opportunity to<br>
                     explore legacy systems and how they still play a role today.<br><br>
@@ -258,7 +289,7 @@
                 </section>
             </div>
             <p class="paragraph-2 fade-in">
-                Mastery begins where passion meets consistency.
+                Mastery begins<br>where passion meets<br>consistency.
             </p>
         </div>
         <p class="vision-text vt2">JOURNEY</p>
@@ -273,15 +304,23 @@
                 <h2 class="game-section-title fade-in">GAMES</h2>
                 <div class="game-grid">
                     <div class="game-item fade-in">
-                        <a href="modular-index/Hangman/hangman-index.html">
-                            <img alt="hangmanCoverImage" src="assets/images/hangman-ss.svg" alt="Project 1" class="game-image">
+                        <a href="modular-index/Fling/index.html">
+                            <img alt="FlingCoverImage" src="assets/images/flingcover.png" alt="Project 1" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">Fling(jumpking inspired)</h1>
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="modular-index/Hangman/index.html">
+                            <img alt="hangmanCoverImage" src="assets/images/hangman-ss.svg" alt="Project 2" class="game-image">
                         </a>
                         <div class="game-overlay">
                             <h1 style="color: white !important">HANGMAN</h1>
                         </div>
                     </div>
                     <div class="game-item fade-in">
-                        <a href="modular-index/RPG/rpg-game-index.html">
+                        <a href="modular-index/RPG/index.html">
                             <img alt="rpgCoverImage" src="assets/images/rpg-ss.svg" alt="Project 3" class="game-image">
                         </a>
                         <div class="game-overlay">
@@ -289,8 +328,8 @@
                         </div>
                     </div>
                     <div class="game-item fade-in">
-                        <a href="modular-index/TicTacToe/TicTacToe.html">
-                            <img alt="tttCoverImage" src="assets/images/Screenshot (42).svg" alt="Project 3" class="game-image">
+                        <a href="modular-index/TicTacToe/index.html">
+                            <img alt="tttCoverImage" src="assets/images/Screenshot (42).svg" alt="Project 4" class="game-image">
                         </a>
                         <div class="game-overlay">
                             <h1 style="color: white !important">TICTACTOE</h1>                    
@@ -298,10 +337,10 @@
                     </div>
                     <div class="game-item fade-in">
                         <a href="https://github.com/fawfol/MazeGame-x86asm-.git">
-                            <img alt="MazeGame-x86asm-coverimage" src="assets/images/mazecoverimg.svg" alt="Project 4" class="game-image">
+                            <img alt="MazeGame-x86asm-coverimage" src="assets/images/mazecoverimg.svg" alt="Project 5" class="game-image">
                         </a>
                         <div class="game-overlay">
-                            <h1 style="color: white !important">MAZE GAME </h1>                    
+                            <h1 style="color: white !important">MAZE GAME </h1>
                         </div>
                     </div>
                 </div>
@@ -337,20 +376,48 @@
                     </p>
                 </div>
                 <!-- See More Button -->
-                <button class="see-more-btn" onclick="toggleDescription(this)">
-                    See More v
-                </button>
+                    <button class="see-more-btn" onclick="toggleDescription(this)">
+                        See More v
+                    </button>
             </div>
         </div>
+        
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">2. Duogram App</p>
+                <div class="project-links-container">
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/fawfol/DUOGRAM">Here : GitHub Repository</a>
+                    </p>
+                    <p class="project-link">Apk Download
+                        <a href="zips/app-release.apk">Version : 1.0.150</a>
+                        <br>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        under development. but the unfinished one still kinda interesting.<br>
+                        You can trust me if you trust firebase. And I'm unable to sell datas anyways so rest assure. Although if it was me I would also choose not to Download such things but still you can try its 100% safe
+                    </p>
+                </div>
+                    <!-- See More Button -->
+                    <button class="see-more-btn" onclick="toggleDescription(this)">
+                        See More v
+                    </button>
+                </div>
+        </div>
+        
         <div class="project-overlay">
-            <p class="project-title">2 GeoLocation Alarm</p>    
+            <p class="project-title">3. GeoLocation Alarm</p>    
             <div class="project-links-container">
-                <p class="project-link">Link to website: <a href="modular-index/Geolocate-alarm/geolocate-alarm.html">Location Alarm</a></p>
+                <p class="project-link">Link to website: <a href="modular-index/Geolocate-alarm/index.html">Location Alarm</a></p>
             </div>
         </div>
         <div class="project-item fade-in">
             <div class="project-overlay">
-                <p class="project-title">3. EN to TIBETAN TRANSLITERATOR</p>
+                <p class="project-title">4. EN to TIBETAN TRANSLITERATOR</p>
                 <div class="project-links-container">
                     <p class="project-link">Source Code
                         <a href="https://github.com/Epstien/English-to-Tibetan-Transliterator.git">Here : GitHub Repository</a>
@@ -366,17 +433,16 @@
                         In my holiday month, I created an English-to-Tibetan transliterator with Java, although it remains unfinished. My objective is to incorporate this transliterator into mobile platforms, beginning with Android through Android Studio. This will enable users to effortlessly transliterate English text into Tibetan based on pronunciations. After the Android version is operational, I intend to develop it for iOS, guaranteeing a smooth experience across various platforms
                     </p>
                 </div>
-                <!-- See More Button -->
-                <button class="see-more-btn" onclick="toggleDescription(this)">
-                    See More v
-                </button>
-                
-                
-            </div>
+                    <!-- See More Button -->
+                    <button class="see-more-btn" onclick="toggleDescription(this)">
+                        See More v
+                    </button>
+                </div>
         </div>
+        
         <div class="project-item fade-in">
             <div class="project-overlay">
-                <p class="project-title">4. BootLoader</p>
+                <p class="project-title">5. BOOTLOADER </p>
                 <div class="project-links-container">
                     <p class="project-link">Source Code
                         <a href="https://github.com/fawfol/bootloader.git">Here : GitHub Repository</a>
@@ -398,7 +464,7 @@
         
         <div class="project-item fade-in">
             <div class="project-overlay">
-                <p class="project-title">5. OTHERS</p>
+                <p class="project-title">6. OTHERS</p>
                 <div class="project-links-container">
                     <p class="project-link">
                         Resources of this webpage :
@@ -433,7 +499,6 @@
         <p class="blog-heading-contact" id="blog-heading-contact">Contact</p>
         <div class="contact-description" id="contact-description">I would love to hear from you</div>
         <div class="contact-form" id="contact-form">
-                <p class="contact-form-text" id="contact-form-text">Tell me about your concern</p><br><br>
                 <form action="https://formspree.io/f/mldebeze" method="POST">
                     <div class="form-div-all"><label for="first-name" class="form-text-description" id="first-name">First
                             name</label><input type="text" minlength="3" maxlength="20" placeholder="Required"
@@ -575,11 +640,13 @@
         <div class="contact-twitter-link-div" id="contact-twitter-div" >
             <a href="https://github.com/fawfol"><font class="contact-social-link-text see-more-btn">GitHub : FAWFOL</font></a>
         </div>
+        <a class="legal-link see-more-btn" href="zips/KalsangResume.pdf" download>RESUME</a><br>
         <a href="copyright.html" class="legal-link see-more-btn">LEGAL</a>
     </div>
 
-    <p class="easter" style="margin-bottom: 1rem !important">: I LOVE CAPPUCCINO & LONG SOCKS :<br>And Im Bad at Explaining Things
+    <p class="easter" style="margin-bottom: 1rem !important">: I LOVE CAPPUCCINO & LONG SOCKS :<br>And Im Bad at Explaining Things<br><br>I prolly have ADHD
     </p>
 </div>
+
 </body>
 </html>
