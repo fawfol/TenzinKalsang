@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Standard Meta -->
+    <meta name="description" content="💖">
+    <meta name="author" content="Tenzin Kalsang">
+    
+    <!-- Open Graph Meta (for Facebook, LINE, Discord etc.) -->
+    <meta property="og:title" content="💖">
+    <meta property="og:description" content="FOR MY LOVE">
+    <meta property="og:image" content="https://tenzinkalsang.site">
+    <meta property="og:url" content="https://tenzinkalsang.site/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ラブ💖">
+    <meta name="twitter:description" content="FOR MY LOVE💕">
+    <meta name="twitter:image" content="https://tenzinkalsang.site">
+    <!-- Meta for LINE preview -->
+    <meta property="og:title" content="ラブちゃん💖">
+    <meta property="og:description" content="FOR MY LOVE 💕">
+    <meta property="og:image" content="https://yourdomain.com/preview.jpg">
+    <meta property="og:url" content="https://tenzinkalsang.site/">
+    <meta property="og:type" content="website">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myラブちゃん</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #ffe6e6, #ffe);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #e60073;
+      text-shadow: 1px 1px 0 #fff;
+      animation: pulse 2s infinite;
+      padding: 0 1rem;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    #buttons {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 70%;
+      max-width: 300px;
+    }
+
+    #yes {
+      background-color: #ff66b2;
+      color: white;
+      z-index: 1;
+    }
+    #no {
+      background-color: #ccc;
+      color: #333;
+      margin-top: 1rem;
+      z-index: 10;
+    }
+
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #ffccdd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 2rem;
+      color: #e60073;
+      text-align: center;
+      z-index: 999;
+      display: none;
+      padding: 1rem;
+    }
+
+    .hug {
+      animation: huggy 3s infinite;
+      font-size: 4rem;
+    }
+
+    @keyframes huggy {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 3rem;
+      }
+      .hug {
+        font-size: 5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>ラブちゃん<br>けっこんしてくれる？<br>💍💖</h1>
+
+  <div id="buttons">
+    <button id="yes">はい</button>
+    <button id="no">いいえ</button>
+  </div>
+
+  <div id="overlay">
+    <div>やっぱりね！💗<br>ぎゅーー！！🤗🤗🤗</div>
+    <div class="hug">(っ˘̩╭╮˘̩)っ❤️</div>
+  </div>
+    <script>
+      const yesBtn = document.getElementById('yes');
+      const noBtn = document.getElementById('no');
+      const overlay = document.getElementById('overlay');
+    
+      let yesScale = 1;
+      const sadResponses = [
+        'ほんとうにいいの？🥺',
+        'ボク泣いちゃうよ…😢',
+        'まだ考えなおせるよ？😭',
+        'そんな〜💔',
+        'じゃあ…さようなら…😞',
+        '心が…ズタズタ…😖',
+        '愛してるのに…どうして？💔'
+      ];
+      let clickCount = 0;
+    
+      noBtn.addEventListener('click', () => {
+  clickCount++;
+  yesScale += 0.6;
+  yesBtn.style.transform = `scale(${yesScale})`;
+
+  if (clickCount < sadResponses.length) {
+    noBtn.textContent = sadResponses[clickCount];
+  } else {
+    noBtn.textContent = '｡ﾟ(ﾟ´Д｀ﾟ)ﾟ｡';
+  }
+
+  // Change to fixed position only after first click
+  if (clickCount === 1) {
+    noBtn.style.position = 'fixed';
+  }
+
+  // Calculate available space for movement
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
+  const padding = 20;
+
+  const maxX = window.innerWidth - btnWidth - padding;
+  const maxY = window.innerHeight - btnHeight - padding;
+
+  const randX = Math.random() * maxX;
+  const randY = Math.random() * maxY;
+
+  noBtn.style.left = `${randX}px`;
+  noBtn.style.top = `${randY}px`;
+
+  if (yesScale >= 5) {
+    yesBtn.style.position = 'absolute';
+    yesBtn.style.top = '50%';
+    yesBtn.style.left = '50%';
+    yesBtn.style.transform = 'translate(-50%, -50%) scale(20)';
+    noBtn.style.display = 'none';
+  }
+});
+
+    
+      yesBtn.addEventListener('click', () => {
+        overlay.style.display = 'flex';
+      });
+    </script>
+
+
+</body>
+</html>

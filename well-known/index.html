@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="QR_2JavLpo5turdC0qRUmbtwf1FeRQK7WfX4VHW7JG0" />
+    <meta name="description" content="Tenzin Kalsang – A passionate software engineer and web developer dedicated to creating innovative and efficient solutions. Explore my portfolio, projects, and skills at tenzinkalsang.site">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=0.1">
+    <script>if(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {window.location.href = "/mobile-site/mobile-index.html";}</script>
+    <link rel="icon" href="assets/images/icon-logo.webp" type="image/svg+xml">
+    <title>TENZIN KALSANG</title>
+      <!-- Other head content -->
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'ja,bo', // Japanese and Tibetan
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'ja','bo',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+    
+    <link rel="stylesheet" href="assets/css/style-min.css">
+    <script src="assets/js/range-animation.js"></script>
+    <script src="assets/js/ToggleNav.js"></script>
+    <script src="assets/js/hero-animation-script.js"></script>
+    <script src="assets/js/script-nav.js"></script>
+    <script src="assets/js/fade-in-script.js"></script>
+    <script src="assets/js/background-box.js"></script>
+    <script src="assets/js/scrollToDiv.js"></script>
+    <script src="assets/js/arise-quote-animation.js"></script>
+    <script src="assets/js/show-description.js"></script>
+    <script src="assets/js/light-and-dark-hold-me-hard-and-mellow.js"></script>
+    <script src="assets/js/mail-script.ts"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Tenzin Kalsang",
+            "url": "https://tenzinkalsang.site",
+            "image": "https://tenzinkalsang.site/icon-logo.webp"
+        }
+        </script>
+</head>
+<body>
+    <!--navigation bar-->
+    <nav id="navbar">
+        <div class="logo-image">
+          <p class="logo-image-text" style="color: #fff !important;">TENZIN KALSANG</p>
+        </div>
+        <button class="hamburger" onclick="toggleNav()">
+          <span onclick="toggle_nav_container()"></span>
+          <span onclick="toggle_nav_container()"></span>
+          <span onclick="toggle_nav_container()"></span>
+        </button>
+        <div class="nav-links-container">
+          <div class="nav-links">
+            <a onclick="scrollToDiv('scroll-about')"><span class="language-button-ani not-button" style="color: #fff !important;">About me</span></a>
+            <a onclick="scrollToDiv('scroll-skill')"><span class="language-button-ani not-button" style="color: #fff !important;">My skills</span></a>
+            <a onclick="scrollToDiv('scroll-project')"><span class="language-button-ani not-button" style="color: #fff !important;">My projects</span></a>
+            <a onclick="scrollToDiv('scroll-contact')"><span class="language-button-ani not-button" style="color: #fff !important;">Contact me</span></a>
+            <div id="google_translate_element"></div>
+            
+            <!--language Changer-->
+            <!-- <a href="/tibetan/tibetan.html">
+              <button id="lang-btn" class="language-toggle" data-lang="EN"><span class="language-button-ani" style="color: #fff !important;">Tibetan / བོད་ཡིག།</span></button>
+            </a> -->
+          </div>
+        </div>
+        <label class="theme-switch">
+            <input class="checkbox" type="checkbox" id="themeToggle" onclick="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+    </nav>
+    <!--hero content division-->
+    <div class="hero-content-slide">
+        <div class="heading-content-box">
+            <div class="silhouette-shadow">
+                <div><span class="line1">BUILD.</span></div>
+                <div><span class="line2">BREAK.</span></div>
+                <div><span class="line3">LEARN</span></div>
+                <div><span class="line4">AND</span></div>
+                <div><span class="line5">GROW.</span></div>
+            </div>
+            <div class="floater-container">
+                <div class="floater-image fi1">
+                    <img alt="aboutCoverImage" src="assets/images/ed3b8d9dd0c84d11832528e2f339d8ea-removebg-preview.webp">
+                    <div class="hover-text"><p style="margin-top: 10rem !important;">ABOUT</p><p style="margin-left: -10rem !important;">me - not much</p></div>
+                </div>
+                <div class="floater-image fi2">
+                    <img alt="skillCoverImage" src="assets/images/support-your-employees.webp">
+                    <div class="hover-text"><p>SKILL & TOOLS</p><p style="margin-left: -12.5rem !important;">Immersive Experience</p></div>
+                </div>
+                <div class="floater-image fi3">
+                    <img alt="workCoverImage" src="assets/images/1695117586-1503391350442534-preview-uffizi-scultura-02-removebg-preview.webp">
+                    <div class="hover-text"><p>WORK</p><p>Experimental projects</p></div>
+                </div>
+                <div class="floater-image fi4">
+                    <img alt="contactCoverImage" src="assets/images/male-silhouette-with-headphones.webp">
+                    <div class="hover-text"><p>CONTACT</p><p style="margin-left: -18.5rem !important;">Let's get in touch</p></div>
+                </div>
+                <div onclick="scrollToDiv('scroll-about')" class="floater-image-grid fig1"></div>
+                <div onclick="scrollToDiv('scroll-skill')" class="floater-image-grid fig2"></div>
+                <div onclick="scrollToDiv('scroll-project')" class="floater-image-grid fig3"></div>
+                <div onclick="scrollToDiv('scroll-contact')" class="floater-image-grid fig4"></div>
+            </div>
+            <!--overlapping heading DarkWide-->
+            <div class="silhouette-text">
+                <div><span class="line1">BUILD.</span></div>
+                <div><span class="line2">BREAK.</span></div>
+                <div><span class="line3">LEARN</span></div>
+                <div><span class="line4">AND</span></div>
+                <div><span class="line5">GROW.</span></div>
+            </div>
+        </div>
+    </div>    
+    <br><br><br>
+    <!--About content -->
+    <div id="scroll-about" style="visibility: collapse !important;"></div>
+    <br><br>
+    <div class="paragraph-set-division-1 fade-in">
+        <p class="vision-text vt1">VISION</p>
+        <div class="paragraph-set-content-holder">
+            <div class="paragraph-1">
+                <section>
+                    <strong class="strong">HI!, My name is Tenzin Kalsang</strong><br><br><br>
+                      — an aspiring software developer.
+                    <Br>I enjoy solving problems with code and building tools that are simple,
+                    <Br> functional, and meaningful.
+                    <Br>My journey started in school with HTML, CSS,and JavaScript. 
+                    <Br>
+                      In college, I expanded my foundation through C, C++, and SQL.
+                    <Br>Out of pure curiosity, I took the initiative to learn Java and x86 assembly
+                    <Br>to deepen my understanding of how software & systems work at a low level
+                    <Br>I believe in a hands-on approach: build, break, learn, and grow.
+                    <Br>Each project I take on is a chance to learn something new and improve.
+                    <Br>As an aspiring developer, I'm looking for opportunities to learn from 
+                    <Br>real-world challenges, contribute to meaningful projects and grow
+                    <Br>alongside experienced teams."
+                </section>
+            </div>
+            <img alt="profileCoverImage" class="para-profile-pic fade-in" src="assets/images/profile-picture-webp.webp">
+            <div class="paragraph-2 fade-in">                
+                Innovation thrives<br>where curiosity<br>meets<br>persistence
+            </div>
+        </div>
+        <p class="vision-text vt2">VISION</p>
+    </div>
+        
+    <!-- about content 2 -->
+    <div class="paragraph-set-division-1_1 fade-in">
+        <p class="vision-text vt1">ABOUT</p>
+        <div class="paragraph-set-content-holder">
+            <p class="paragraph-2_2">
+                Turning ideas<br>into code,<br>bugs into<br>lessons,and<br>Softwares into<br>experiences
+            </p>
+            <div class="paragraph-1_2">
+                <section>
+                        "This portfolio showcases my journey as a developer, highlighting<br>
+                        a range of projects and achievements across different areas. I've<br>
+                        tackled the complexities of both front-end and back-end development<br>
+                        You might say I'm at the point where I believe in the old adage, "if it<Br>
+                        ain't broke, don't fix it!" I'm fluent in Browser, and I enjoy the<br>
+                        challenge that I face when transforming dreams into reality.
+                        <br><br>
+                        While I'm learning software development, Im also eager to expand my<br>
+                        skillset in other Tech related areas.  I'm always looking for ways<br>
+                        to sharpen my abilities in both design and functionality. Beyond coding<br>
+                        I'm also fascinated by network security and I'm determined to learn<br>
+                        more about cybersecurity and embedded systes. The logic behind secure systems is incredibly<br>
+                        compelling, and I think it's important for any good developer to understand the<br>
+                        challenges of digital security. And like Linus Torvalds, I appreciate clean,<br>
+                        efficient code and the power of open-source innovation. I love exploring new<br>
+                        technologies, optimizing performance, and creating seamless user experiences<br>
+                        Because, ultimately, great software is about more than just how it works;<br>
+                        it's about how it feels to use."
+                </section>
+            </div>
+        </div>
+        <p class="vision-text vt2">ABOUT</p>
+    </div>
+
+    <!-- skill section -->
+    <div id="scroll-skill" style="visibility: collapse !important;"></div>
+    <div class="skill-section fade-in fade-in-side">
+        <p class="vision-text vt1">SKILL DOMAIN</p>
+        <div class="paragraph-set-content-holder fade-in">
+            <div class="paragraph-1">
+                <section class="about-para">
+                    "My path in programming began early, establishing a solid<br>
+                    basis in web development. I got acquainted with HTML in 6th<br>
+                    grade and CSS during 9th grade while studying at
+                    <a href="http://www.tcv.org.in/" target="_blank" class="tcv-online-link">TCV Selakui</a>,<br>
+                    where I cultivated an interest in crafting organized and visually<br>
+                    attractive web pagea .Throughout my 11th and 12th grade at
+                    <a href="http://www.tibhomes.org/" target="_blank" class="thf-online-link">THF Mussoorie</a><br>
+                    I studied Web Application as a subject, where I received<br>
+                    formal instruction in JavaScript which enabled me to grasp the<br>
+                    functionalities of dynamic web applications under guidance of my<br>
+                    greatest computer teacher ever.
+                    <br><br>
+                    My shift into software development started in 
+                    <a href="https://hitdoon.com/" target="_blank" class="hit-online-link">Himalayan Institute<br>of Institute</a>
+                    , where I studied C in my initial semester and C++ during my<br>
+                    following semester, enhancing my grasp of programming logic and<br>
+                    framework."
+                </section>
+            </div>
+            <div class="lang-skills fade-in fade-in-range">
+                <div class="skill-range-title" id="about-range-title">
+                    <div class="tits">JAVASCRIPT</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-1" id="inner-range-box-1"></div>
+                    </div>
+                    <div class="tits">HTML</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-2" id="inner-range-box-2"></div>
+                    </div>
+                    <div class="tits">CSS</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-3" id= "inner-range-box-3"></div>
+                    </div>
+                    <div class="tits">C</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-4" id="inner-range-box-4"></div>
+                    </div>
+                    <div class="tits">SQL</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-6" id="inner-range-box-6"></div>
+                    </div>
+                    <div class="tits">PYTHON</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-7" id="inner-range-box-7"></div>
+                    </div>
+                    <div class="tits">JAVA</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-8" id="inner-range-box-8"></div>
+                    </div>
+                    <div class="tits">React Native</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-9" id="inner-range-box-9"></div>
+                    </div>
+                    <div class="tits">x86 ASM</div>
+                    <div class="range-box">
+                        <div class="inner-range-box-10" id="inner-range-box-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="vision-text vt2 fade-in">SKILL DOMAIN</p>
+    </div>
+    <!-- skill domain paragraph set 2-->
+    <div class="skill-paragraph-set-division-2 fade-in">
+        <p class="vision-text vt1">JOURNEY</p>
+        <div class="paragraph-set-content-holder">
+            <div class="paragraph-1">
+                <section>
+                    "Outside of my main coursework,In addition to my primary<br>
+                    studies, I have also been actively broadening my abilities.<br>
+                    During my third semester, I learned SQL, that opened up the<br>
+                    realm of databases to me. And throughout during my holiday break<br>
+                    I immersed myself in Java, marking my first experience with the<br>
+                     object-oriented programming. Right now,<br>
+                    in my fourth semester, I'm actually working with VB 6.0 which is<br>
+                    not much of a use these days but gives me a unique opportunity to<br>
+                    explore legacy systems and how they still play a role today.<br><br>
+                    Beyond the academic side of things, I've developed a real passion<br>
+                    for Bash scripting and the command line. It's something I do as<br>
+                    a hobby to make managing system operations faster and easier.<br>
+                    I see each new skill I learn as another tool in my toolbox for<br>
+                    to refine my expertise with every project I tackle."
+                </section>
+            </div>
+            <p class="paragraph-2 fade-in">
+                Mastery begins<br>where passion meets<br>consistency.
+            </p>
+        </div>
+        <p class="vision-text vt2">JOURNEY</p>
+    </div>
+    
+    <!-- projects -->
+    <div id="scroll-project" style="visibility: collapse !important;"></div>
+    <section id="work" class="game-section fade-in">
+        <div class="vision-container fade-in">
+            <p class="vision-text vt1 game-vt1">EXPLORE</p>
+            <div class="game-space">
+                <h2 class="game-section-title fade-in">GAMES</h2>
+                <div class="game-grid">
+                    <div class="game-item fade-in">
+                        <a href="modular-index/Fling/index.html">
+                            <img alt="FlingCoverImage" src="assets/images/flingcover.png" alt="Project 1" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">Fling(jumpking inspired)</h1>
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="modular-index/Hangman/index.html">
+                            <img alt="hangmanCoverImage" src="assets/images/hangman-ss.svg" alt="Project 2" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">HANGMAN</h1>
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="modular-index/RPG/index.html">
+                            <img alt="rpgCoverImage" src="assets/images/rpg-ss.svg" alt="Project 3" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">RPG Dragon-Slayer</h1>
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="modular-index/TicTacToe/index.html">
+                            <img alt="tttCoverImage" src="assets/images/Screenshot (42).svg" alt="Project 4" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">TICTACTOE</h1>                    
+                        </div>
+                    </div>
+                    <div class="game-item fade-in">
+                        <a href="https://github.com/fawfol/MazeGame-x86asm-.git">
+                            <img alt="MazeGame-x86asm-coverimage" src="assets/images/mazecoverimg.svg" alt="Project 5" class="game-image">
+                        </a>
+                        <div class="game-overlay">
+                            <h1 style="color: white !important">MAZE GAME </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="vision-text vt2 game-vt2">EXPLORE</p>
+        </div>
+    </section>
+    <div class="quote-content-box fade-in-arise fade-in">
+        <p class="quote-text">"Growth begins<br>where comfort ends."</p>
+    </div>
+    
+    <div class="PROJECTS">
+        <h2 class="project-section-title fade-in">PROJECTS</h2>
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">1. WEBSITE PORTFOLIO</p>
+                <div class="project-links-container">
+                    <p class="project-link">Link to Website
+                        <a href="https://tenzinkalsang.site/portfolio-1">Here : www.tenzinkalsang.site/portfolio-1</a>
+                    </p>
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/Epstien/responsive-website-portfolio.git">Here : GitHub Repository</a>
+                    </p>
+                    <p class="project-link">Download Zip file to extract on your device
+                        <a href="zips/PortfolioTK.zip" download>Here : Portfolio Zip</a>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        This site was my initial effort at creating an online portfolio, first established in August 2023. It acts as a digital resume, highlighting my abilities, projects, and experiences in an organized and easy-to-navigate manner. Initially, I created it aiming for a professional online presence, but since then, I have developed a newer website with enhanced design and features. Although this iteration showcases my initial web development attempts, it continues to mirror my journey and progress in programming
+                    </p>
+                </div>
+                <!-- See More Button -->
+                    <button class="see-more-btn" onclick="toggleDescription(this)">
+                        See More v
+                    </button>
+            </div>
+        </div>
+        
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">2. Duogram App</p>
+                <div class="project-links-container">
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/fawfol/DUOGRAM">Here : GitHub Repository</a>
+                    </p>
+                    <p class="project-link">Apk Download
+                        <a href="https://mega.nz/file/oZI3kYQD#CZ0iDDsNI9G9xQt7-kMgLLYIlPqDLcOJZ1iQPy8ort8">Version : 1.0.150</a>
+                        <br>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        under development. but the unfinished one still kinda interesting.<br>
+                        You can trust me if you trust firebase. And I'm unable to sell datas anyways so rest assure. Although if it was me I would also choose not to Download such things but still you can try its 100% safe
+                    </p>
+                </div>
+                    <!-- See More Button -->
+                    <button class="see-more-btn" onclick="toggleDescription(this)">
+                        See More v
+                    </button>
+                </div>
+        </div>
+        
+        <div class="project-overlay">
+            <p class="project-title">3. GeoLocation Alarm</p>    
+            <div class="project-links-container">
+                <p class="project-link">Link to website: <a href="modular-index/Geolocate-alarm/index.html">Location Alarm</a></p>
+            </div>
+        </div>
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">4. EN to TIBETAN TRANSLITERATOR</p>
+                <div class="project-links-container">
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/Epstien/English-to-Tibetan-Transliterator.git">Here : GitHub Repository</a>
+                    </p>
+                    <p class="project-link">Download Zip file to extract on your device
+                        <a href="zips/Transliterator.zip" download>Here : Transliterator Zip</a>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        In my holiday month, I created an English-to-Tibetan transliterator with Java, although it remains unfinished. My objective is to incorporate this transliterator into mobile platforms, beginning with Android through Android Studio. This will enable users to effortlessly transliterate English text into Tibetan based on pronunciations. After the Android version is operational, I intend to develop it for iOS, guaranteeing a smooth experience across various platforms
+                    </p>
+                </div>
+                    <!-- See More Button -->
+                    <button class="see-more-btn" onclick="toggleDescription(this)">
+                        See More v
+                    </button>
+                </div>
+        </div>
+        
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">5. BOOTLOADER </p>
+                <div class="project-links-container">
+                    <p class="project-link">Source Code
+                        <a href="https://github.com/fawfol/bootloader.git">Here : GitHub Repository</a>
+                    </p>
+                </div>
+                
+                <!-- Description with See More Button -->
+                <div class="description-container">
+                    <p class="website-link-paragraph">
+                        Im trying to make my own OS but i think its not quiet possible for now, as Im unable to make my bootloader to enter 32bit protected mode.
+                    </p>
+                </div>
+                <!-- See More Button -->
+                <button class="see-more-btn" onclick="toggleDescription(this)">
+                    See More v
+                </button>
+            </div>
+        </div>
+        
+        <div class="project-item fade-in">
+            <div class="project-overlay">
+                <p class="project-title">6. OTHERS</p>
+                <div class="project-links-container">
+                    <p class="project-link">
+                        Resources of this webpage :
+                        <a href="https://github.com/fawfol/TenzinKalsang.git">GitHub Repo link</a>
+                    </p>
+                    <p class="project-link">
+                        Some simple Physics simulations:
+                        <a href="https://github.com/fawfol/Physics.git">
+                            <br><span class="numb-nuts" style="color: rgb(191, 189, 189) !important; font-size:0.8rem !important"> Basic Physic Sim in C</span></a>
+                    </p>
+                    <p class="project-link">
+                        Speech to Speech Translator :
+                        <a href="https://github.com/fawfol/python-speech2speech-translator.git">
+                            <br><span class="numb-nuts" style="color: rgb(191, 189, 189) !important; font-size:0.8rem !important"> Simple Speech to Speech tranlator with python and gradio using AssemblyAi and elevenLabAi and py tranlate</span></a>
+                    </p>
+                    <p class="project-link">
+                        FLUID SIMULATOR :
+                        <a href="modular-index/Fluidsim/fluidsim.html">
+                            <br><span class="numb-nuts" style="color: rgb(191, 189, 189) !important; font-size:0.8rem !important"> Doesnt work on computer BTW Coz Im LAZYYYY</span></a>
+                    </p>
+                    <p class="project-link">
+                        UIIAIU UUIIAIU : 
+                        <a href="https://www.youtube.com/watch?v=ZHgyQGoeaB0"> uiiaiu uuiiaiu uiiaiu uuiiaiu</a>
+                    </p>
+                </div><br>
+                    <p class="website-link-paragraph">
+                        -:- Most of Codes and other resources are uploaded on <a href="https://github.com/fawfol"><span class="see-more-btn">Fawfol Github</span></a> Repository so you can check it out there.
+                    </p>
+                
+            </div>
+        </div>    
+    </div>
+    <div class="quote-content-box fade-in">
+        <p class="quote-text">"When you are speaking,<br>You're just repeating what you know.<br>"But when you stay quiet and listen,<br>You might learn something new!"</p>
+    </div>
+
+
+   <!-- final page -->
+<div class="final-page">
+    <div id="scroll-contact" style="visibility: collapse !important;"></div>
+    <div class="contact-class" id="contact-id">
+        <p class="blog-heading-contact" id="blog-heading-contact">Contact</p>
+        <div class="contact-description" id="contact-description">I would love to hear from you</div>
+        <div class="contact-form" id="contact-form">
+                <form action="https://formspree.io/f/mldebeze" method="POST">
+                    <div class="form-div-all"><label for="first-name" class="form-text-description" id="first-name">First
+                            name</label><input type="text" minlength="3" maxlength="20" placeholder="Required"
+                            class="form-input" id="first-name-input" name="fname-name" required>
+                    </div>
+                    <div class="form-div-all"><label for="last-name" class="form-text-description" id="last-name">Last
+                            name </label><input type="text" minlength="3" maxlength="20" placeholder="Required"
+                            class="form-input" id="last-name-input" name="lname-name" required>
+                    </div>
+                    <div class="form-div-all phone-number-container">
+                            <label for="phone-number" class="form-text-description" id="phone-number">Phone</label>
+                            <select size="1" name="countryCode" id="phone-country-code" class="phone-country-code">
+                                <option data-countryCode="IN" value="91" selected>India (+91)</option>
+                                <optgroup label="Other countries">
+                                    <option data-countryCode="AF" value="93">Afghanistan (+93)</option>
+                        <option data-countryCode="AL" value="355">Albania (+355)</option>
+                        <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                        <option data-countryCode="AS" value="1-684">American Samoa (+1-684)</option>
+                        <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                        <option data-countryCode="AO" value="244">Angola (+244)</option>
+                        <option data-countryCode="AI" value="1-264">Anguilla (+1-264)</option>
+                        <option data-countryCode="AQ" value="672">Antarctica (+672)</option>
+                        <option data-countryCode="AG" value="1-268">Antigua and Barbuda (+1-268)</option>
+                        <option data-countryCode="AR" value="54">Argentina (+54)</option>
+                        <option data-countryCode="AM" value="374">Armenia (+374)</option>
+                        <option data-countryCode="AW" value="297">Aruba (+297)</option>
+                        <option data-countryCode="AU" value="61">Australia (+61)</option>
+                        <option data-countryCode="AT" value="43">Austria (+43)</option>
+                        <option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+                        <option data-countryCode="BS" value="1-242">Bahamas (+1-242)</option>
+                        <option data-countryCode="BH" value="973">Bahrain (+973)</option>
+                        <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+                        <option data-countryCode="BB" value="1-246">Barbados (+1-246)</option>
+                        <option data-countryCode="BY" value="375">Belarus (+375)</option>
+                        <option data-countryCode="BE" value="32">Belgium (+32)</option>
+                        <option data-countryCode="BZ" value="501">Belize (+501)</option>
+                        <option data-countryCode="BJ" value="229">Benin (+229)</option>
+                        <option data-countryCode="BM" value="1-441">Bermuda (+1-441)</option>
+                        <option data-countryCode="BT" value="975">Bhutan (+975)</option>
+                        <option data-countryCode="BO" value="591">Bolivia (+591)</option>
+                        <option data-countryCode="BA" value="387">Bosnia and Herzegovina (+387)</option>
+                        <option data-countryCode="BW" value="267">Botswana (+267)</option>
+                        <option data-countryCode="BR" value="55">Brazil (+55)</option>
+                        <option data-countryCode="BN" value="673">Brunei (+673)</option>
+                        <option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+                        <option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+                        <option data-countryCode="BI" value="257">Burundi (+257)</option>
+                        <option data-countryCode="KH" value="855">Cambodia (+855)</option>
+                        <option data-countryCode="CM" value="237">Cameroon (+237)</option>
+                        <option data-countryCode="CA" value="1">Canada (+1)</option>
+                        <option data-countryCode="CV" value="238">Cape Verde (+238)</option>
+                        <option data-countryCode="KY" value="1-345">Cayman Islands (+1-345)</option>
+                        <option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+                        <option data-countryCode="TD" value="235">Chad (+235)</option>
+                        <option data-countryCode="CL" value="56">Chile (+56)</option>
+                        <option data-countryCode="CO" value="57">Colombia (+57)</option>
+                        <option data-countryCode="KM" value="269">Comoros (+269)</option>
+                        <option data-countryCode="CD" value="243">Congo, Democratic Republic (+243)</option>
+                        <option data-countryCode="CG" value="242">Congo, Republic (+242)</option>
+                        <option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+                        <option data-countryCode="HR" value="385">Croatia (+385)</option>
+                        <option data-countryCode="CU" value="53">Cuba (+53)</option>
+                        <option data-countryCode="CY" value="357">Cyprus (+357)</option>
+                        <option data-countryCode="CZ" value="420">Czech Republic (+420)</option>
+                        <option data-countryCode="DK" value="45">Denmark (+45)</option>
+                        <option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+                        <option data-countryCode="DO" value="1-809">Dominican Republic (+1-809)</option>
+                        <option data-countryCode="EC" value="593">Ecuador (+593)</option>
+                        <option data-countryCode="EG" value="20">Egypt (+20)</option>
+                        <option data-countryCode="SV" value="503">El Salvador (+503)</option>
+                        <option data-countryCode="EE" value="372">Estonia (+372)</option>
+                        <option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+                        <option data-countryCode="FI" value="358">Finland (+358)</option>
+                        <option data-countryCode="FR" value="33">France (+33)</option>
+                        <option data-countryCode="DE" value="49">Germany (+49)</option>
+                        <option data-countryCode="GR" value="30">Greece (+30)</option>
+                        <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+                        <option data-countryCode="IN" value="91">India (+91)</option>
+                        <option data-countryCode="ID" value="62">Indonesia (+62)</option>
+                        <option data-countryCode="IT" value="39">Italy (+39)</option>
+                        <option data-countryCode="JP" value="81">Japan (+81)</option>
+                        <option data-countryCode="MY" value="60">Malaysia (+60)</option>
+                        <option data-countryCode="MX" value="52">Mexico (+52)</option>
+                        <option data-countryCode="NP" value="977">Nepal (+977)</option>
+                        <option data-countryCode="NL" value="31">Netherlands (+31)</option>
+                        <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+                        <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                        <option data-countryCode="PK" value="92">Pakistan (+92)</option>
+                        <option data-countryCode="PH" value="63">Philippines (+63)</option>
+                        <option data-countryCode="PL" value="48">Poland (+48)</option>
+                        <option data-countryCode="RU" value="7">Russia (+7)</option>
+                        <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+                        <option data-countryCode="ZA" value="27">South Africa (+27)</option>
+                        <option data-countryCode="KR" value="82">South Korea (+82)</option>
+                        <option data-countryCode="ES" value="34">Spain (+34)</option>
+                        <option data-countryCode="SE" value="46">Sweden (+46)</option>
+                        <option data-countryCode="CH" value="41">Switzerland (+41)</option>
+                        <option data-countryCode="TH" value="66">Thailand (+66)</option>
+                        <option data-countryCode="TB" value="86">Tibet (+86)</option>
+                        <option data-countryCode="TR" value="90">Turkey (+90)</option>
+                        <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                        <option data-countryCode="GB" value="44">United Kingdom (+44)</option>
+                        <option data-countryCode="US" value="1">United States (+1)</option>
+                        <option data-countryCode="VN" value="84">Vietnam (+84)</option>
+                        <option data-countryCode="ZM" value="260">Zambia (+260)</option>
+                        <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+                                   <option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+                                </optgroup>
+                            </select>
+                            <input minlength="7" maxlength="14" placeholder="optional" type="numbers" class="form-input"
+                                id="phone-input" name="phone-name">
+                    </div>  
+                    <div class="form-div-all"><label for="mail" class="form-text-description"
+                            id="mail">Mail</label><input type="email" placeholder="Required" minlength="12"
+                            class="form-input" id="mail-input" name="mail-name" required></div>
+                    <div class="form-div-all"><label for="message" class="form-text-description"
+                            id="message-text">Queries</label><textarea minlength="20"
+                            placeholder="How can you help me help you?" id="message-input" name="message-name"
+                            required></textarea></div>
+                    <div><button class="contact-form-submit" name="submit" type="submit" value="SEND">SEND
+                        </button></div>
+                    <div><button class="contact-form-reset" name="reset" type="reset" value="CLEAR">CLEAR</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <!-- Social media links container OUTSIDE the contact box -->
+    <div class="social-links-container">
+        <p class="social-heading"> SOCIAL LINKS : </p>
+        <div class="contact-instagram-link-div" id="contact-instagram-div">
+            <a href="https://www.instagram.com/tttt___kalsang/"><font class="contact-social-link-text see-more-btn">Instagram : tttt___kalsang</font></a>
+        </div>
+        <div class="contact-twitter-link-div" id="contact-twitter-div" >
+            <a href="https://x.com/Hilarious_Monke"><font class="contact-social-link-text see-more-btn">Twitter X : Hilarious_Monke</font></a>
+        </div>
+        <div class="contact-linkedin-link-div" id="contact-linkedin-div">
+           <a href="https://www.linkedin.com/in/tenzin-kalsang-090985285/" ><font class="contact-social-link-text see-more-btn">LinkedIn : Tenzin&nbsp;Kalsang</font></a>
+        </div>
+        <div class="contact-twitter-link-div" id="contact-twitter-div" >
+            <a href="https://github.com/fawfol"><font class="contact-social-link-text see-more-btn">GitHub : FAWFOL</font></a>
+        </div>
+        <a class="legal-link see-more-btn" href="zips/KalsangResume.pdf" download>RESUME</a><br>
+        <a href="copyright.html" class="legal-link see-more-btn">LEGAL</a>
+    </div>
+
+    <p class="easter" style="margin-bottom: 1rem !important">: I LOVE CAPPUCCINO & LONG SOCKS :<br>And Im Bad at Explaining Things<br><br>I prolly have ADHD
+    </p>
+</div>
+
+</body>
+</html>

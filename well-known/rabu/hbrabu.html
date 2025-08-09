@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>らぶちさんへ</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #e6f7ff);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #ff1493;
+      text-shadow: 0 0 10px #ff66cc, 0 0 30px #ff1493;
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 1rem;
+    }
+
+    p, .message {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 0.5rem 0;
+      text-shadow: 0 0 5px #ffffff;
+      animation: fadeInUp 2s ease forwards;
+      max-width: 800px;
+    }
+
+    .emoji {
+      font-size: 2rem;
+      margin-top: 1rem;
+      animation: pop 1s ease infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff99cc; }
+      to   { text-shadow: 0 0 20px #ff66cc, 0 0 30px #ff1493; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatUp {
+      0%   { transform: translateY(100vh) scale(1); opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to   { transform: scale(1.2); }
+    }
+
+    .float-emojis {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .float-emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 6s linear infinite;
+    }
+
+    .message-container {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>らぶちさん 🎂🎉</h1>
+  <p>🎊 お誕生日おめでとう！</p>
+  <p>🎈 Happy Birthday!</p>
+  <div class="emoji">🍰🎉🎂🎁🎊🧁</div>
+
+  <div class="message-container">
+    <p class="message">✨ You are one of the brightest lights in this world. Never stop shining.</p>
+    <p class="message">🌸 今日という日は、あなたの笑顔と同じくらい特別です。</p>
+    <p class="message">🎂 Wishing you joy that lasts the whole year and memories that last forever.</p>
+    <p class="message">🌟 会えてうれしかった！素敵な誕生日になりますように。</p>
+    <p class="message">💫 You deserve all the love, cake, and magic the universe can give you today!</p>
+    <p class="message">🎁 あなたの新しい一年が、笑顔と幸運に満ちた素晴らしいものになりますように。</p>
+  </div>
+
+  <div class="float-emojis" id="floatContainer"></div>
+
+  <script>
+    // Floating emoji animation
+    const floatContainer = document.getElementById('floatContainer');
+    const emojis = ['🎂', '💖', '🎉', '🎈', '🍰', '🎁', '🧁'];
+
+    setInterval(() => {
+      const e = document.createElement('div');
+      e.className = 'float-emoji';
+      e.style.left = Math.random() * 100 + 'vw';
+      e.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      e.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      e.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      floatContainer.appendChild(e);
+      setTimeout(() => e.remove(), 6000);
+    }, 300);
+  </script>
+
+</body>
+</html>

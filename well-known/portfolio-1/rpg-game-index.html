@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="e3i5RZTLnCu8ck4WJMCpEa-320-80.webp" type="image/webp"/>
+    <style>
+        body {
+            background-color: #0a0a23;
+          }
+          body > div:first-child {
+            visibility: collapse;
+          }
+          
+          #headline{
+            max-width: 100%;
+            max-height: 20px;
+            background-image: linear-gradient(#c70d0d,#ffac33);
+            font-size: 15px;
+            border: 1px solid red;
+            box-shadow: 2px 2px #c70d0d;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          }
+          #text {
+            background-color: #0a0a23;
+            font-size: 18px;
+            color: #ffffff;
+            padding: 10px;
+          }
+        
+          #game-border{
+            max-width: 55%;
+            max-height: 600px;
+            background-color: rgb(23, 23, 81);
+            margin: 150px auto 0px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 5px solid black;
+          }
+        
+          #banner-text::before{
+            content: '- DRAGON REPELLER -';
+          }
+        
+          #banner-text{
+            color:#ffa;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 400;
+            font-size: 25px;
+            text-align: center;
+          }
+        
+          #game {
+            border-radius: 4px;
+            max-width: auto;
+            max-height: auto;
+            background-color: #ffffff;
+            color: #ffffff;
+            margin: 10px auto 0px;
+            padding: 10px;
+          }
+        
+          #controls,
+          #stats {
+            border: 1px solid #0a0a23;
+            padding: 5px;
+            align-self: center;
+            color: #0a0a23;
+          }
+          .space{
+            padding-left: 100px;
+          }
+          .inven{
+            padding-left: 2px;
+            font-weight: bold;
+            font-size: 20px;
+          }
+        
+          .inven1{
+            padding-right: 5px;
+            font-size: 18px;
+            font-weight:  600;
+        
+          }
+        
+          #monsterStats {
+            display: none;
+            border: 1px solid #0a0a23;
+            padding: 5px;
+            color: #ffffff;
+            background-color: #c70d0d;
+          }
+          
+          .stat {
+            padding-right: 10px;
+            font-size: 20px;
+          }
+          
+          button {
+            cursor: pointer;
+            color: #0a0a23;
+            height: 30px;
+            background-color: #feac32;
+            background-image: linear-gradient(#fecc4c, #ffac33);
+            border: 3px solid #feac32;
+            margin-left: 3px;
+            margin-right: 3px;
+            font-weight: 400;
+            font-size: 20px;
+          }
+          .home{
+            margin-top: 1rem;
+            background-color :skyblue;
+            border: 2px solid skyblue;
+            opacity :0.8;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            height:2.5rem;
+            width: 6.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            align-content: center;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            border-radius: 10px;
+            border: 1px  solid rgb(0,207,204);
+            letter-spacing: 0;
+            transition: all 0.5s linear;
+            position: relative;
+            box-shadow:0 0 20px rgba(0,207,204,0.3),0 0 20px rgba(0,207,204,0.3);
+        }
+        .menu-button:hover{
+            transition: all 0.5s linear;
+            font-size: 18px;
+            font-weight: 750 ;
+            color: #080737;
+            background-color: rgb(0,207,204);
+        }
+    </style>
+    <script>
+        alert("Turn on 'Destop Site' in website Menu");
+    </script>
+    <title>RPG - Dragon Repeller</title>
+  </head>
+  <body>
+  <a href="https://tenzinkalsang.site"><button class = "home" value="&larr;HOME">HOME</button></a>
+  <div class="LONDON BRIDGE IS FALLING DOWN FALLING DOWN FALLING DOWN! LONDON BRIDGE IS FALLING DOWN MY FAIR LADY"></div>
+  <nav id="headline">
+      <marquee>
+          Welcome to RPG Dragon Repeller where you have to execute a DRAGON that is stopping town people from leaving outside. EARN money EARN Xp from CAVE to eliminate the dragon easily
+      </marquee>
+  </nav>
+    <div id="game-border">
+        <div id="banner-text">
+        </div>
+        <div id="game">
+            <div id="stats">
+                <span class="stat">XP: <strong><span id="xpText">0</span>&nbsp;&nbsp;</strong></span>
+                <span class="stat">Health: <strong><span id="healthText">100</span>&nbsp;&nbsp;</strong></span>
+                <span class="stat">Gold: <strong><span id="goldText">50</span>&nbsp;&nbsp;</strong></span>
+                <span class="space"></span>
+                <span class="inven"><strong>Inventory: </strong> </span>
+                <span class="inven1" id="inventoryText"> </span>
+                
+            </div>
+            
+            <Center><div id="controls">
+                <button id="button1">Go to store</button>
+                <button id="button2">Go to cave</button>
+                <button id="button3">Fight dragon</button>
+            </div></Center>
+            <div id="monsterStats">
+                <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+                <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+            </div>
+            <center><div id="text" class="ttext">
+                Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+            </div></center>
+        </div>
+  </div>
+    <script>
+        let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
+
+const button1 = document.querySelector('#button1');
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const text = document.querySelector("#text");
+const xpText = document.querySelector("#xpText");
+const healthText = document.querySelector("#healthText");
+const goldText = document.querySelector("#goldText");
+const monsterStats = document.querySelector("#monsterStats");
+const monsterName = document.querySelector("#monsterName");
+const monsterHealthText = document.querySelector("#monsterHealth");
+const inventoryText = document.querySelector("#inventoryText");
+const weapons = [
+  { name: 'stick', power: 5 },
+  { name: 'dagger', power: 30 },
+  { name: 'claw hammer', power: 50 },
+  { name: 'sword', power: 100 }
+];
+const monsters = [
+  {
+    name: "slime",
+    level: 2,
+    health: 15
+  },
+  {
+    name: "fanged beast",
+    level: 8,
+    health: 60
+  },
+  {
+    name: "dragon",
+    level: 20,
+    health: 300
+  }
+]
+const locations = [
+  {
+    name: "town square",
+    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button functions": [goStore, goCave, fightDragon],
+    text: "You are in the town square. You see a sign that says \"Store\"."
+  },
+  {
+    name: "store",
+    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button functions": [buyHealth, buyWeapon, goTown],
+    text: "You enter the store."
+  },
+  {
+    name: "cave",
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+    "button functions": [fightSlime, fightBeast, goTown],
+    text: "You enter the cave. You see some monsters."
+  },
+  {
+    name: "fight",
+    "button text": ["Attack", "Dodge", "Run"],
+    "button functions": [attack, dodge, goTown],
+    text: "You are fighting a monster."
+  },
+  {
+    name: "kill monster",
+    "button text": ["Go to town square", "Go to town square", "Go to town square"],
+    "button functions": [goTown, goTown, easterEgg],
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+  },
+  {
+    name: "lose",
+    "button text": ["PAY-GOLD?", "GIVE-UP", "RE-PLAY?"],
+    "button functions": [payGold, giveUp, restart],
+    text: "You die. ☠️ Pay " + gold + " gold for 100 Health (least 50 gold)"
+  },
+  { 
+    name: "win", 
+    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
+    "button functions": [restart, restart, restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+  },
+  {
+    name: "easter egg",
+    "button text": ["2", "8", "Go to town square?"],
+    "button functions": [pickTwo, pickEight, goTown],
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+  }
+];
+
+// initialize buttons
+button1.onclick = goStore;
+button2.onclick = goCave;
+button3.onclick = fightDragon;
+
+// item in inventory when page loads
+inventoryText.innerText=inventory;
+
+function update(location) {
+  inventoryText.innerText=inventory;
+  monsterStats.style.display = "none";
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerText = location.text;
+}
+
+function goTown() {
+  text.style.background="black";
+  inventoryText.innerText=inventory;
+  update(locations[0]);
+}
+
+function goStore() {
+  inventoryText.innerText=inventory;
+  update(locations[1]);
+}
+
+function goCave() {
+  inventoryText.innerText=inventory;
+  update(locations[2]);
+}
+
+function buyHealth() {
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    goldText.innerText = gold;
+    healthText.innerText = health;
+  } 
+  else {
+    text.innerText = "You do not have enough gold to buy health.";
+  }
+}
+
+function buyWeapon() {
+  if (currentWeapon < weapons.length - 1) {
+    if (gold >= 30) {
+      gold -= 30;
+      currentWeapon++;
+      goldText.innerText = gold;
+      let newWeapon = weapons[currentWeapon].name;
+      text.innerText = "You now have a " + newWeapon + ".";
+      inventory.push(newWeapon);
+      text.innerText += " In your inventory you have: " + inventory;
+      inventoryText.innerText=inventory;
+    } else {
+      text.innerText = "You do not have enough gold to buy a weapon.";
+      inventoryText.innerText=inventory;
+    }
+  }
+   else {
+    text.innerText = "You already have the most powerful weapon!";
+    button2.innerText = "Sell weapon for 15 gold";
+    button2.onclick = sellWeapon;
+    inventoryText.innerText=inventory;
+  }
+}
+
+function sellWeapon() {
+  if (inventory.length > 1) {
+
+    gold += 15;
+    goldText.innerText = gold;
+    let currentWeapon = inventory.shift();
+    text.innerText = "You sold a " + currentWeapon + ".";
+    text.innerText += " In your inventory you have: " + inventory;
+    inventoryText.innerText=inventory;
+  } 
+  else {
+    text.innerText = "Do not sell your only weapon!";
+    inventoryText.innerText=inventory;
+  }
+}
+
+function fightSlime() {
+  fighting = 0;
+  goFight();
+}
+
+function fightBeast() {
+  fighting = 1;
+  goFight();
+}
+
+function fightDragon() {
+  fighting = 2;
+  goFight();
+}
+
+function goFight() {
+  update(locations[3]);
+  inventoryText.innerText=inventory;
+  monsterHealth = monsters[fighting].health;
+  monsterStats.style.display = "block";
+  monsterName.innerText = monsters[fighting].name;
+  monsterHealthText.innerText = monsterHealth;
+}
+function goFight2() {
+  update(locations[3]);
+  text.style.background="black";
+  inventoryText.innerText=inventory;
+  monsterHealth = monsters[fighting].health;
+  monsterStats.style.display = "block";
+  monsterName.innerText = monsters[fighting].name;
+  monsterHealthText.innerText = monsterHealth;
+  text.innerText=" Use your second live well bro"
+}
+
+function attack() {
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  if (isMonsterHit()) {
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+  }
+   else {
+    text.innerText += " You miss.";
+  }
+  healthText.innerText = health;
+  monsterHealthText.innerText = monsterHealth;
+  if (health <= 0) {
+    lose();
+
+  } 
+  else if (monsterHealth <= 0) {
+    fighting === 2 ? winGame() : defeatMonster();
+  }
+  if (Math.random() <= .1 && inventory.length !== 1) {
+    text.innerText += " Your " + inventory.pop() + " breaks.";
+    currentWeapon--;
+  }
+}
+
+function getMonsterAttackValue(level) {
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  console.log(hit);
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+  return Math.random() > .2 || health < 20;
+}
+
+function dodge() {
+  if(Math.random()> .4)
+  {
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+  }
+  else{
+    let scratch=(Math.floor(Math.random()*10));
+    text.innerText = monsters[fighting].name + " managed to scratch you! You lose " + scratch + " of your health";
+    health-=scratch;
+    healthText.innerText=health;
+  }
+}
+
+function defeatMonster() {
+  gold += Math.floor(monsters[fighting].level * 6.7);
+  xp += monsters[fighting].level;
+  goldText.innerText = gold;
+  xpText.innerText = xp;
+  update(locations[4]);
+
+}
+
+function payGold(){
+  if(gold<50)
+  {
+    text.innerText="You do not have enough gold, please restart the game";
+    setTimeout(() => {
+      lose();
+    }, 3500);
+
+  }
+  else{
+  gold-=gold;
+  health+=100;
+  goldText.innerText=gold;
+  healthText.innerText=health;
+  monsterHealth=monsterHealth;
+  goFight2();
+  }
+}
+
+function giveUp(){
+  text.style.background="black";
+  text.innerText="You are at Town square, People are throwing stones at you for giving them false hope! 😔";
+  gold=0;
+  health=100;
+  xp=0;
+  goldText.innerText=gold;
+  healthText.innerText=health;
+  xpText.innerText=xp;
+
+  setTimeout(() => {
+    goTown();
+  }, 6000);
+}
+
+function winGame() {
+  update(locations[6]);
+  text.style.background="green";
+}
+
+function lose() {
+  health=0;
+  healthText.innerText=health;
+  text.style.background="red";
+  update(locations[5]);
+}
+
+function restart() {
+  text.style.background="black";
+  xp = 0;
+  health = 100;
+  gold = 50;
+  currentWeapon = 0;
+  inventory = ["stick"];
+  goldText.innerText = gold;
+  healthText.innerText = health;
+  xpText.innerText = xp;
+  goTown();
+}
+
+function easterEgg() {
+  update(locations[7]);
+}
+
+function pickTwo() {
+  pick(2);
+}
+
+function pickEight() {
+  pick(8);
+}
+function pick(guess) {
+  const numbers = [];
+  while (numbers.length < 10) {
+    numbers.push(Math.floor(Math.random() * 11));
+  }
+  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+  for (let i = 0; i < 10; i++) {
+    text.innerText += numbers[i] + "\n";
+  }
+  if (numbers.indexOf(guess) !== -1) {
+    text.innerText += "Right! You win 20 gold!";
+    gold += 20;
+    goldText.innerText = gold;
+    setTimeout(() => {
+      goTown();
+    }, 5000);
+  } 
+  else {
+    text.innerText += "Wrong! You lose 10 health!";
+    health -= 10;
+    healthText.innerText = health;
+    if (health <= 0) {
+      lose();
+    }
+    else{
+      setTimeout(() => {
+        goTown();
+      }, 4000);
+    }
+  }
+}
+    </script>
+  </body>
+</html>

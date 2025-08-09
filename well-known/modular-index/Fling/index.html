@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:description" content="Play Fling Tower – a vertical platformer that tests your skill and timing. Try to climb the impossible tower!" />
+  <meta property="og:image" content="https://www.tenzinkalsang.site/modular-index/Fling/assets/images/favicon.ico"/>
+  <meta property="og:url" content="https://www.tenzinkalsang.site/modular-index/Fling" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <title>FLING : Can You Reach the Top?</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  
+  <script>
+  const lang = (navigator.language || navigator.userLanguage).toLowerCase();
+  const pageLang = lang.startsWith('ja') ? 'jp' : 'en';
+  window.currentLanguage = pageLang;
+  </script>
+
+  
+  <!-- phaser CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.js"></script>
+
+  <!-- Game -->
+  <script src="game.js"></script>
+</body>
+</html>

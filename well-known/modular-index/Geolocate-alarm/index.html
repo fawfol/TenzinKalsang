@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Geolocation Alarm</title>
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #status, #current-location, #alarm-location {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .alarm-active {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .alarm-inactive {
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Geolocation Alarm <br>(free v)</h1>
+    <p id="current-location">Fetching your current location...</p>
+  </header>
+  <div class="container">
+    <p>Enter your target location:</p>
+    <input id="target-location" type="text" placeholder="Search for a location" />
+    <button id="alarm-btn" onclick="handleAlarmButton()">Set Alarm</button>
+
+    <div id="status" class="alarm-inactive">No alarm is active.</div>
+    <div id="alarm-location"></div>
+
+    <div id="map"></div>
+
+    <audio id="alarm-sound" src="alarm.mp3" preload="auto"></audio>
+  </div>
+
+  <script>
+  let map, currentMarker, targetMarker, targetCoords = null;
+  let alarmActive = false;
+  let alarmTriggered = false;
+
+
+  function initMap() {
+    console.log("Map init triggered");
+    map = L.map('map').setView([20, 78], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+    }).addTo(map);
+
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log("Got position", position);
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        map.setView([lat, lng], 13);
+
+        currentMarker = L.marker([lat, lng]).addTo(map)
+          .bindPopup("You are here.")
+          .openPopup();
+
+        document.getElementById("current-location").textContent =
+          `Your Current Location (Lat ${lat.toFixed(4)}, Lng ${lng.toFixed(4)})`;
+
+        startTracking();
+      },
+      (err) => {
+        alert("Geolocation error: " + err.message);
+        console.error("Geolocation error:", err);
+      }
+    );
+  }
+
+  function searchLocation() {
+    const query = document.getElementById("target-location").value;
+    if (!query) return alert("Please enter a location.");
+
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`, {
+      headers: {
+        'User-Agent': 'tenzinkalsang.site Geolocate Alarm (student project)',
+        'Referer': window.location.origin
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (!data || data.length === 0) {
+        alert("Location not found.");
+        return;
+      }
+
+      const loc = data[0];
+      targetCoords = {
+        lat: parseFloat(loc.lat),
+        lng: parseFloat(loc.lon)
+      };
+
+      if (targetMarker) map.removeLayer(targetMarker);
+      targetMarker = L.marker([targetCoords.lat, targetCoords.lng])
+        .addTo(map)
+        .bindPopup("Alarm Target Location")
+        .openPopup();
+
+      map.setView([targetCoords.lat, targetCoords.lng], 13);
+
+        document.getElementById("alarm-location").textContent =
+          `Alarm Set For: ${loc.display_name}`;
+        document.getElementById("status").textContent = "Alarm is active!";
+        document.getElementById("status").className = "alarm-active";
+        
+        document.getElementById("alarm-btn").textContent = "Stop Alarm";
+        alarmActive = true;
+        alarmTriggered = false;
+
+    });
+  }
+
+  function startTracking() {
+    navigator.geolocation.watchPosition((position) => {
+      const userPos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      console.log("Tracking user at:", userPos);
+
+      if (currentMarker) map.removeLayer(currentMarker);
+      currentMarker = L.marker([userPos.lat, userPos.lng])
+        .addTo(map)
+        .bindPopup("You are here.")
+        .openPopup();
+
+      if (targetCoords) {
+        const distance = haversineDistance(userPos, targetCoords);
+        console.log("Distance to target:", distance.toFixed(3), "km");
+
+      if (!alarmTriggered && targetCoords && distance <= 0.5) {
+        alarmTriggered = true;
+        document.getElementById("status").textContent = "You've reached you destination!";
+        document.getElementById("alarm-sound").play();
+        }
+
+      }
+    });
+  }
+  function stopAlarm() {
+  const alarmSound = document.getElementById("alarm-sound");
+  alarmSound.pause();
+  alarmSound.currentTime = 0;
+
+  // Reset state
+  targetCoords = null;
+  alarmActive = false;
+  alarmTriggered = false;
+
+  // reset UI
+  document.getElementById("status").textContent = "No alarm is active.";
+  document.getElementById("status").className = "alarm-inactive";
+  document.getElementById("alarm-btn").textContent = "Set Alarm";
+  document.getElementById("alarm-location").textContent = "";
+
+  // remove target marker if any
+  if (targetMarker) {
+    map.removeLayer(targetMarker);
+    targetMarker = null;
+  }
+}
+
+
+
+  function stopAlarm() {
+  const alarmSound = document.getElementById("alarm-sound");
+  alarmSound.pause();
+  alarmSound.currentTime = 0;
+
+  document.getElementById("status").textContent = "Alarm was stopped.";
+  document.getElementById("status").className = "alarm-inactive";
+  document.getElementById("stop-alarm-btn").style.display = "none";
+}
+
+  function haversineDistance(coords1, coords2) {
+    const toRad = (x) => (x * Math.PI) / 180;
+    const R = 6371;
+    const dLat = toRad(coords2.lat - coords1.lat);
+    const dLng = toRad(coords2.lng - coords1.lng);
+    const a = Math.sin(dLat / 2) ** 2 +
+              Math.cos(toRad(coords1.lat)) * Math.cos(toRad(coords2.lat)) *
+              Math.sin(dLng / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+  function handleAlarmButton() {
+      if (!alarmActive) {
+        searchLocation(); // Try to set alarm
+      } else {
+        stopAlarm(); // Cancel or stop alarm
+      }
+    }
+
+  window.addEventListener("load", initMap);
+</script>
+
+</body>
+</html>

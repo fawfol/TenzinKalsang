@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="hangman icon.png" type="image/png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            background-color:rgba(33,5,125,0.2);
+            text-align: center; 
+            color: white ; 
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 3rem;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+            background-color:rgba(0, 0, 255, 0.414);
+            opacity: 0.6;
+        }
+        h1 {
+            margin-bottom: 3rem;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+        }
+        .word { 
+            font-size: 1.5rem; 
+            margin: 20px; 
+            letter-spacing: 1px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 2rem; 
+        }
+        .letters { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 20px;
+        }
+        .letter { 
+            margin: 5px; 
+            padding: 12px 15px; 
+            cursor: pointer; 
+            border: 1px solid black; 
+            background: rgba(255, 255, 0, 0.79);
+            opacity:1;
+            color: black;
+            font-weight: 600;
+            font-size:1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .letter:hover { 
+            background: #0056b3;
+        }
+        .letter:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        canvas {
+            display: block;
+            margin: auto;
+            border: 1px solid black;
+            position: relative;
+            background-color: honeydew;
+            border-radius: 30px;
+        }
+        .game-over {
+            font-size: 2rem;
+            color: red;
+            font-weight: bold;
+            transform: rotate(-10deg);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            opacity: 1;
+            display: none;
+        }
+        .new-game {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+            font-weight: 700;
+        }
+        .new-game:hover {
+            background: #218838;
+        }
+        .category-container {
+            margin-bottom: 20px;
+        }
+        .category {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 1rem;
+            background: #ff9800;
+            color: black;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .category:hover {
+            background: #e68900;
+        }
+        .home{
+            margin-top: 1rem;
+            font-size:1rem;
+            background-color :skyblue;
+            border: 2px solid skyblue;
+            opacity :0.8;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            height:2.5rem;
+            width: 6.5rem;
+            border-radius: 30px;
+            
+            cursor: pointer;
+            align-content: center;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            border-radius: 10px;
+            border: 1px  solid rgb(0,207,204);
+            letter-spacing: 0;
+            transition: all 0.5s linear;
+            position: relative;
+            box-shadow:0 0 20px rgba(0,207,204,0.3),0 0 20px rgba(0,207,204,0.3);
+        }
+        .menu-button:hover{
+            transition: all 0.5s linear;
+            font-size: 18px;
+            font-weight: 750 ;
+            color: #080737;
+            background-color: rgb(0,207,204);
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="https://tenzinkalsang.site"><button class = "home" value="&larr;HOME">HOME</button></a>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div class="category-container">
+            <button class="category" onclick="startGame('animal')">Animal</button>
+            <button class="category" onclick="startGame('food')">Food</button>
+            <button class="category" onclick="startGame('country')">Country</button>
+            <button class="category" onclick="startGame('random')">Random</button>
+        </div>
+        <div style="position: relative;">
+            <canvas id="hangmanCanvas" width="200" height="250"></canvas>
+            <div class="game-over" id="gameOver">FAILED😢</div>
+        </div>
+        <div class="word" id="word"></div>
+        <div class="letters" id="letters"></div>
+        <div class="word" id="correctWord" style="display:none;"></div>
+        <button class="new-game" id="newGame" onclick="location.reload()">New Game</button>
+    </div>
+    <script>
+        const wordCategories = {
+            animal:["giraffe", "dolphin", "penguin", "cheetah", "buffalo", "octopus", "squirrel", "elephant", "raccoon", "jaguar", "leopard", "ostrich", "gorilla", "coyote", "peacock", "chipmunk", "albatross", "kangaroo", "hamster", "mustang", "scorpion", "tarantula", "buffalo", "parrot", "cricket", "chicken", "tortoise", "flamingo", "mongoose", "sparrow", "buzzard", "woodpecker", "alligator", "porcupine", "anteater", "pangolin", "salamander", "wolverine", "stingray", "honeybee"],
+            food: ["burger", "sushi", "waffle", "noodles", "donuts", "burrito", "popcorn", "brownie", "muffin", "cupcake", "ramen", "omelette", "sausage", "dumpling", "biscuit", "peanut", "almond", "cashew", "walnut", "raisin", "honeydew", "spinach", "cabbage", "lentils", "chicken", "shrimp", "coconut", "granola", "tortilla", "cheddar"],
+            country: ["india", "japan", "brazil", "canada", "mexico", "sweden", "france", "germany", "russia", "poland", "norway", "spain", "italy", "tibet", "turkey", "greece", "serbia", "belgium", "finland", "estonia", "latvia", "malawi", "zambia", "angola", "taiwan", "switzerland", "portugal", "pakistan", "mongolia", "morocco", "chile", "uganda", "senegal", "albania", "croatia", "ecuador", "georgia", "jamaica", "lebanon", "liberia", "malta", "panama", "paraguay", "romania", "slovakia", "slovenia", "ukraine", "uruguay", "vietnam", "zimbabwe", "australia", "argentina", "botswana", "dominica", "honduras", "indonesia", "kazakhstan", "madagascar", "mauritius", "nicaragua", "philippines", "singapore", "venezuela", "afghanistan", "bangladesh", "cambodia", "colombia", "ethiopia", "guatemala", "malaysia", "namibia", "tanzania", "turkmenistan", "uzbekistan",],
+            random: ["javascript", "hangman", "developer", "coding", "computer", "giraffe", "dolphin", "penguin", "cheetah", "buffalo", "octopus", "squirrel", "elephant", "raccoon", "jaguar", "leopard", "ostrich", "gorilla", "coyote", "peacock", "chipmunk", "albatross", "kangaroo", "hamster", "mustang", "scorpion", "tarantula", "buffalo", "parrot", "cricket", "chicken", "tortoise", "flamingo", "mongoose", "sparrow", "buzzard", "woodpecker", "alligator", "porcupine", "anteater", "pangolin", "salamander", "wolverine", "stingray", "honeybee","burger", "sushi", "waffle", "noodles", "donuts", "burrito", "popcorn", "brownie", "muffin", "cupcake", "ramen", "omelette", "sausage", "dumpling", "biscuit", "peanut", "almond", "cashew", "walnut", "raisin", "honeydew", "spinach", "cabbage", "lentils", "chicken", "shrimp", "coconut", "granola", "tortilla", "cheddar","india", "china", "japan", "brazil", "canada", "mexico", "sweden", "france", "germany", "russia", "poland", "norway", "spain", "italy", "tibet", "turkey", "greece", "serbia", "belgium", "finland", "estonia", "latvia", "malawi", "zambia", "angola", "taiwan", "switzerland", "portugal", "pakistan", "mongolia", "morocco", "chile", "uganda", "senegal", "albania", "croatia", "ecuador", "georgia", "jamaica", "lebanon", "liberia", "malta", "panama", "paraguay", "romania", "slovakia", "slovenia", "ukraine", "uruguay", "vietnam", "zimbabwe", "australia", "argentina", "botswana", "dominica", "honduras", "indonesia", "kazakhstan", "madagascar", "mauritius", "nicaragua", "philippines", "singapore", "venezuela", "afghanistan", "bangladesh", "cambodia", "colombia", "ethiopia", "guatemala", "malaysia", "namibia", "tanzania", "turkmenistan", "uzbekistan"]
+        };
+        let selectedWord = "";
+        let guessedLetters = new Set();
+        let incorrectGuesses = 0;
+        const canvas = document.getElementById("hangmanCanvas");
+        const ctx = canvas.getContext("2d");
+        
+        function startGame(category) {
+            selectedWord = wordCategories[category][Math.floor(Math.random() * wordCategories[category].length)];
+            
+            guessedLetters.clear();
+            incorrectGuesses = 0;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillText(" ", 0, 0);
+            document.getElementById("gameOver").style.display = "none";
+            document.getElementById("correctWord").style.display = "none";
+            document.getElementById("newGame").style.display = "none";
+            displayWord();
+        
+            createKeyboard();
+        }
+        
+        function drawHangman(stage) {
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "black";
+        
+            if (stage === 1) {
+                ctx.beginPath();
+                ctx.moveTo(100, 20);
+                ctx.lineTo(100, 40);
+                ctx.stroke();
+            }
+            if (stage === 2) {
+                ctx.beginPath();
+                ctx.arc(100, 60, 20, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            if (stage === 3) {
+                ctx.beginPath();
+                ctx.moveTo(100, 80);
+                ctx.lineTo(100, 140);
+                ctx.stroke();
+            }
+            if (stage === 4) {
+                ctx.beginPath();
+                ctx.moveTo(100, 90);
+                ctx.lineTo(120, 110);
+                ctx.stroke();
+            }
+            if (stage === 5) {
+                ctx.beginPath();
+                ctx.moveTo(100, 90);
+                ctx.lineTo(80, 110);
+                ctx.stroke();
+            }
+            if (stage === 6) {
+                ctx.beginPath();
+                ctx.moveTo(100, 140);
+                ctx.lineTo(120, 170);
+                ctx.stroke();
+            }
+            if (stage === 7) {
+                ctx.beginPath();
+                ctx.moveTo(100, 140);
+                ctx.lineTo(80, 170);
+                ctx.stroke();
+            }        
+        }
+    
+        function displayWord() {
+            document.getElementById("word").textContent = [...selectedWord].map(letter => guessedLetters.has(letter) ? letter : "_").join(" ");
+        }
+
+        function handleGuess(letter, button) {
+            button.disabled = true; // disable button after clicking
+            guessedLetters.add(letter);
+        
+            if (selectedWord.includes(letter)) {
+                displayWord();
+                if ([...selectedWord].every(l => guessedLetters.has(l))) {
+                    document.getElementById("newGame").style.display = "block";
+                    drawWinText(); // Call function to display "Win" text
+                }
+            } else {
+                incorrectGuesses++;
+                drawHangman(incorrectGuesses);
+                if (incorrectGuesses >= 7) {
+                    document.getElementById("gameOver").style.display = "block";
+                    document.getElementById("correctWord").textContent = `Correct Word: ${selectedWord}`;
+                    document.getElementById("correctWord").style.display = "block";
+                    document.getElementById("newGame").style.display = "block";
+                    document.querySelectorAll(".letter").forEach(btn => btn.disabled = true);
+                }
+            }
+        }
+        function drawWinText() {
+            ctx.font = "50px Arial";
+            ctx.fillStyle = "darkgreen";
+            ctx.textAlign = "center";
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.rotate(-0.1);
+            ctx.fillText("WIN!🎉", 0, 0);
+            ctx.resetTransform();
+        }
+            
+        function createKeyboard() {
+            const alphabet = "abcdefghijklmnopqrstuvwxyz";
+            const letterContainer = document.getElementById("letters");
+            letterContainer.innerHTML = "";
+            [...alphabet].forEach(letter => {
+                let btn = document.createElement("button");
+                btn.textContent = letter;
+                btn.className = "letter";
+                btn.onclick = () => handleGuess(letter, btn);
+                letterContainer.appendChild(btn);
+            });
+        }
+    </script>
+</body>
+</html>

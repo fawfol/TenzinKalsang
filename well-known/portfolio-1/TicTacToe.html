@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <title>Tic-Tac-Toe</title>
+<Style>
+.body{
+    background-color: bisque;
+    }
+    body > div:first-child {
+        visibility: collapse;
+    }
+.container{
+    width: 50%;
+    max-width: 60%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top:40%;
+    left: 50%;
+    background-color: turquoise;
+    border-radius: 3px;
+    box-shadow: inset;
+}    
+.heading:before{
+    content: "TIC TAC TOE:";
+}
+.heading{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgba(127, 255, 212, 0.42);
+    text-shadow: 0 0 3px aquamarine, 0 0 5px #000000;
+}
+.reset-button{
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: beige;
+    width: 70px;
+    height: 30px;
+    text-transform: uppercase;
+    font-weight:bold;
+    color:#003747;
+    
+}
+.reset-button:hover{
+    border: 2px solid black;
+    font-weight: bolder;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    width: 320px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight:bold;
+    font-size: 45px;
+    font-family: sans-serif;
+    border: 1px solid rgb(34, 185, 170); 
+    border-radius: 4px;   
+}
+.message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+</style>
+<script>
+    alert("Turn on 'Destop Site' in website Menu");
+</script>
+</head>
+<body bgcolor="beige">
+    <div class="pussy cat pussy cat pussy in the well"></div>
+    <div class="container">
+    <div class="heading"></div>
+    <div id="board" class="board">
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+    </div>
+    <div id="message" class="message"></div><br>
+    <center><button class="reset-button" onclick="resetBoard()">Reset</button><br><br></center><br>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    let currentPlayer = 'X';
+    let board = ['', '', '', '', '', '', '', '', ''];
+    const winCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ];
+
+    const cells = document.querySelectorAll('.cell');
+    const message = document.getElementById('message');
+
+    function makeMove(cell) {
+        const index = Array.from(cells).indexOf(cell);
+
+        if (board[index] === '' && !checkWinner()) {
+            board[index] = currentPlayer;
+            cell.textContent = currentPlayer;
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+
+            if (checkWinner()) {
+                message.textContent = `${currentPlayer === 'X' ? 'O' : 'X' }` +" "+ "WINS!";
+            } 
+            else if (board.every((cell) => cell !== '')) {
+              document.getElementById("message").innerHTML="<b><font color='green'>IT'S A DRAW</font></b>";
+            }
+        }
+    }
+
+    function checkWinner() {
+        for (const combo of winCombos) {
+            const [a, b, c] = combo;
+            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function resetBoard() {
+        board = ['', '', '', '', '', '', '', '', ''];
+        currentPlayer = 'X';
+        cells.forEach((cell) => {
+            cell.textContent = '';
+        });
+        message.textContent = '';
+    }
+    const resetButton = document.querySelector('button');
+resetButton.addEventListener('click', resetBoard);
+
+    resetBoard(); 
+    cells.forEach((cell) => {
+        cell.addEventListener('click', function() {
+            makeMove(cell);
+        });
+    });
+
+    resetBoard(); 
+});
+
+</script>
+</body>
+</html>

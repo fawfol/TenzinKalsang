@@ -1,0 +1,299 @@
+* {
+    scroll-behavior: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scrollbar-width: none;
+}
+
+/*background design*/
+.circle {
+    position: fixed;
+    background-color: rgba(181, 175, 175, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: -99;
+    animation: appear 3s ease-out forwards, collapse 2s ease-in 4s forwards;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes collapse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+html{
+    scroll-behavior: smooth; /* Smooth overall scrolling */
+    overflow-x: hidden;
+    scrollbar-width: none; /* Hide scrollbar */
+}
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: rgba(37, 36, 36, 0.95);
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(29, 27, 27, 0.95);
+    z-index: 1000;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+nav.hidden {
+    top: -100px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.theme-switch {
+    position: relative;
+    display: block;
+    right: auto;
+    width: 3rem;
+    height: 1.8rem; 
+}
+
+/* Hide default checkbox */
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Switch slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s;
+    border-radius: 2rem;
+}
+
+/* Circle inside the slider */
+.slider::before {
+    content: "🌙";
+    position: absolute;
+    height: 1.6rem;
+    width: 1.6rem;
+    left: 0.1rem;
+    bottom: 0.1rem;
+    background-color: rgb(35, 35, 35);
+    border-radius: 50%;
+    transition: 0.4s;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6rem;
+}
+
+/* When checked (light mode) */
+.checkbox:checked + .slider {
+    background-color: white;
+}
+
+.checkbox:checked + .slider::before {
+    content: "🌞";
+    transform: translateX(1.25rem);
+    background-color: black;
+    color: white;
+}
+
+.logo-image-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white !important;
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger .line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#menuToggle {
+    display: none;
+}
+
+#menuToggle:checked + .hamburger .line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#menuToggle:checked + .hamburger .line:nth-child(2) {
+    opacity: 0;
+}
+
+#menuToggle:checked + .hamburger .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 3.5rem;
+    right: -100%;
+    width: 40vw;
+    height: calc(100vh - 50px);
+    background: rgba(29, 27, 27, 0.95);
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    transition: right 0.3s ease;
+    box-sizing: border-box;
+}
+
+#menuToggle:checked ~ .nav-menu {
+    right: 0;
+}
+
+.nav-menu li {
+    padding: 15px 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.theme-switch {
+    order: -1;
+    z-index: 1001;
+}
+
+/* each container takes up full screen*/
+.container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    width: 95vw;
+    scroll-behavior: smooth;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5rem;
+}
+.segments {
+    height: 100vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    text-align: center;
+    transition: transform 1.2s ease-in-out;
+}
+.italica-words{
+    position: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    transform: skewX(15deg);
+    letter-spacing: 0.15rem;
+}
+
+.hero-content-slide{
+    margin-top: -3rem;
+    position: relative;
+    width: 95vw;
+    height: 100vh;
+}
+.silhouette-text{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size:3rem;
+    font-weight: 900;
+    transform: scaleX(1.2);
+    color: rgba(158, 152, 152, 0.95);
+    line-height: 1;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.glass{
+    padding-top: 0.6rem;
+    padding-bottom: 1rem;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: rgba(88, 89, 91, 0.16);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    border: 0.1rem solid rgba(99, 98, 98, 0.426);
+}
+.quote{
+    position: relative;
+    display: block;
+    font-size:1.4rem;
+    font-weight: 900;
+    transform: scaleX(1);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgb(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-picture{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 67vw;
+    height: 14rem;
+
+}
+
